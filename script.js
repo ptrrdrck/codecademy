@@ -12,9 +12,7 @@ const getAbsoluteDistance = (a, b) => {
 
 const compareGuesses = (humanGuess, computerGuess, target) => {
   if (humanGuess >= 0 && humanGuess <= 9) {
-    let humanDiff = getAbsoluteDistance(target, humanGuess)
-    let compDiff = getAbsoluteDistance(target, computerGuess)
-    return humanDiff <= compDiff ? true : false;
+    return getAbsoluteDistance(target, humanGuess) <= getAbsoluteDistance(target, computerGuess) ? true : false;
   } else {
     return alert('Guess out of range. Select 0-9.');
   }

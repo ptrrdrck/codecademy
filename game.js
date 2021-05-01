@@ -24,7 +24,7 @@ guessButton.addEventListener('click', () => {
   // Display the computer guess and the target
   computerGuessDisplay.innerText = computerGuess;
   targetNumberDisplay.innerText = target;
-  
+
   // Determine if the human or computer wins:
   const humanIsWinner = compareGuesses(currentHumanGuess, computerGuess, target)
   const winner = humanIsWinner ? 'human' : 'computer'
@@ -34,7 +34,7 @@ guessButton.addEventListener('click', () => {
 
   // Display the winner
   if (humanIsWinner) {
-    guessButton.innerText = 'You Win!!!!!';
+    guessButton.innerText = 'You Win!!!';
     guessButton.classList.toggle('winning-text')
   } else {
     computerWinsDisplay.innerText = 'Computer Wins!!!';
@@ -45,7 +45,7 @@ guessButton.addEventListener('click', () => {
   // Display the current scores:
   humanScoreDisplay.innerText = humanScore;
   computerScoreDisplay.innerText = computerScore;
-  
+
   // Set the correct disabled state for the buttons
   guessButton.setAttribute('disabled', true)
   nextRoundButton.removeAttribute('disabled');
@@ -64,10 +64,12 @@ nextRoundButton.addEventListener('click', () => {
   // Reset the guess input box and the target number display:
   targetNumberDisplay.innerText = '?';
   guessButton.innerText = 'Make a Guess';
-  humanGuessInput.value = '';
+  humanGuessInput.value = '0';
   computerGuessDisplay.innerText = '?';
   computerWinsDisplay.innerText = '';
   guessButton.classList.remove('winning-text');
+  subtractButton.setAttribute('disabled', true);
+  addButton.removeAttribute('disabled');
 });
 
 const addButton = document.getElementById('add');
@@ -84,12 +86,14 @@ subtractButton.addEventListener('click', () => {
 });
 
 const handleValueChange = value => {
-  if (value > 0 && value <= 9) {
+  if (value >= 1 && value <= 8) {
     subtractButton.removeAttribute('disabled');
     addButton.removeAttribute('disabled');
-  } else if (value > 9) {
+  } else if (value > 8) {
     addButton.setAttribute('disabled', true);
-  } else if (value <= 0) {
+  } else if (value < 1) {
+    subtractButton.setAttribute('disabled', true);
+  } else {
     subtractButton.setAttribute('disabled', true);
   }
 }
