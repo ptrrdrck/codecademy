@@ -13,6 +13,7 @@ const mockUpStrand = () => {
   return newStrand;
 };
 
+// Creates a pAequor object
 function pAequorFactory(num, arr) {
   return {
     specimenNum: num,
@@ -48,6 +49,7 @@ function pAequorFactory(num, arr) {
 const survivingSpecimens = [];
 let idCounter = 1;
 
+// Creates a set of 30 surviving pAequor specimens
 while (survivingSpecimens.length < 30) {
   let newOrganism = pAequorFactory(idCounter, mockUpStrand());
   if (newOrganism.willLikelySurvive()) {
