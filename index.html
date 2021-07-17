@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML cheatz</title>
+        <link rel="stylesheet" href="./styles.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <main>
+                <h1>Pseudo setup guide, learning tool, memory burner for:</h1>
+            </main>
+            <nav>
+                <ul>
+                    <li><a href="#html">HTML5</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#js">JS</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="top-comment">
+            <p>A beginner's cheatsheet arranged and annotated for no-bs construction of <em>basic</em> site files. Feel free to suggest edits on <a class="author" href="https://github.com/ptrrdrck" target="_blank">GitHub</a>.</p>
+        </div>
+        <section id="html">
+            <h2>HTML5</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tag</td>
+                        <td>Usage</td>
+                        <td>Location</td>
+                        <td>Notes</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="code">&lt;html&gt;</span></td>
+                        <td>Document wrapper</td>
+                        <td>Initial parent</td>
+                        <td>Preceded by declaration <strong>&lt;!DOCTYPE html&gt;</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;head&gt;</span></td>
+                        <td>Undisplayed (meta) page info</td>
+                        <td>Within <strong>&lt;html&gt;</strong>, above <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;meta&gt;</span></td>
+                        <td>Page attributes</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td>Include <strong>http-equiv="Content-Type" content="text/html; charset=UTF-8"</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;title&gt;</span></td>
+                        <td>Browser tab page title</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;link&gt;</span></td>
+                        <td>Linking stylesheets, scripts</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td>Include <strong>rel="stylesheet" type="text/css"</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;script&gt;</span></td>
+                        <td>Inline scripts</td>
+                        <td>Within <strong>&lt;head&gt;</strong>, or end of <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;body&gt;</span></td>
+                        <td>Page content wrapper</td>
+                        <td>Below <strong>&lt;head&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;header&gt;</span></td>
+                        <td>Leading content</td>
+                        <td>Below <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;nav&gt;</span></td>
+                        <td>Navigation</td>
+                        <td>Within <strong>&lt;header&gt;</strong></td>
+                        <td>Links setup as <strong>&lt;ul&gt;</strong> + <strong>&lt;li&gt;</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;main&gt;</span></td>
+                        <td>Banner image/text</strong></td>
+                        <td>Within <strong>&lt;header&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;section&gt;</span></td>
+                        <td>Blocks of content</td>
+                        <td>Between <strong>&lt;header&gt;</strong> and <strong>&lt;footer&gt;</strong></td>
+                        <td>Set unique <strong>id="name"</strong> attribute for nav</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;div&gt;</span></td>
+                        <td>One-off blocks of content</td>
+                        <td>Within <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="last-row"><span class="code">&lt;footer&gt;</span></td>
+                        <td class="last-row">Helpful page info</td>
+                        <td class="last-row">End of <strong>&lt;body&gt;</strong></td>
+                        <td class="last-row"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td colspan="4">Last updated July 2021.</td>
+                </tfoot>
+            </table>
+        </section>
+        <br><br><br>
+        <section id="css">
+            <h2>CSS</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tag</td>
+                        <td>Usage</td>
+                        <td>Location</td>
+                        <td>Notes</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="code">&lt;html&gt;</span></td>
+                        <td>Document wrapper</td>
+                        <td>Initial parent</td>
+                        <td>Preceded by declaration <strong>&lt;!DOCTYPE html&gt;</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;head&gt;</span></td>
+                        <td>Undisplayed (meta) page info</td>
+                        <td>Within <strong>&lt;html&gt;</strong>, above <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;meta&gt;</span></td>
+                        <td>Page attributes</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td>Include <strong>http-equiv="Content-Type" content="text/html; charset=UTF-8"</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;title&gt;</span></td>
+                        <td>Browser tab page title</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;link&gt;</span></td>
+                        <td>Linking stylesheets, scripts</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td>Include <strong>rel="stylesheet" type="text/css"</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;script&gt;</span></td>
+                        <td>Inline scripts</td>
+                        <td>Within <strong>&lt;head&gt;</strong>, or end of <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;body&gt;</span></td>
+                        <td>Page content wrapper</td>
+                        <td>Below <strong>&lt;head&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="last-row"><span class="code">&lt;footer&gt;</span></td>
+                        <td class="last-row">Helpful page info</td>
+                        <td class="last-row">End of <strong>&lt;body&gt;</strong></td>
+                        <td class="last-row"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td colspan="4">Last updated July 2021.</td>
+                </tfoot>
+            </table>
+        </section>
+        <br><br><br>
+        <section id="js">
+            <h2>JS</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tag</td>
+                        <td>Usage</td>
+                        <td>Location</td>
+                        <td>Notes</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="code">&lt;html&gt;</span></td>
+                        <td>Document wrapper</td>
+                        <td>Initial parent</td>
+                        <td>Preceded by declaration <strong>&lt;!DOCTYPE html&gt;</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;head&gt;</span></td>
+                        <td>Undisplayed (meta) page info</td>
+                        <td>Within <strong>&lt;html&gt;</strong>, above <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;meta&gt;</span></td>
+                        <td>Page attributes</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td>Include <strong>http-equiv="Content-Type" content="text/html; charset=UTF-8"</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;title&gt;</span></td>
+                        <td>Browser tab page title</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;link&gt;</span></td>
+                        <td>Linking stylesheets, scripts</td>
+                        <td>Within <strong>&lt;head&gt;</strong></td>
+                        <td>Include <strong>rel="stylesheet" type="text/css"</strong></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;script&gt;</span></td>
+                        <td>Inline scripts</td>
+                        <td>Within <strong>&lt;head&gt;</strong>, or end of <strong>&lt;body&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;body&gt;</span></td>
+                        <td>Page content wrapper</td>
+                        <td>Below <strong>&lt;head&gt;</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="last-row"><span class="code">&lt;footer&gt;</span></td>
+                        <td class="last-row">Helpful page info</td>
+                        <td class="last-row">End of <strong>&lt;body&gt;</strong></td>
+                        <td class="last-row"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td colspan="4">Last updated July 2021.</td>
+                </tfoot>
+            </table>
+        </section>
+        <br><br><br>
+    </body>
+</html>
