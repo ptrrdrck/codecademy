@@ -3,16 +3,17 @@
 /*
 HTML Cheatz Stylesheet
 
-version: 0.1
+version: 0.2
 
 */
 
 /* Global */
 
 body {
+    background: rgb(176, 228, 248);
+    /*background: linear-gradient(180deg, rgba(237,237,237,1) 0%, rgba(219,219,219,1) 50%, rgba(241,241,241,1) 100%);*/
     font-family: Helvetica, sans-serif;
     color: black;
-    background-color: plum;
     height: 125vh;
     margin-top: 80px;
     padding: 30px;
@@ -29,7 +30,9 @@ header {
     height: 80px;
     display: flex;
     align-items: center;
-    box-shadow: 0 0 25px -15px black;
+    /*box-shadow: 0 0 25px -15px black;*/
+    border-bottom: 1px solid rgb(155, 216, 240);
+    box-shadow: 0 0 25px -12px rgb(155, 216, 240);
 }
 
 header * {
@@ -37,10 +40,11 @@ header * {
 }
 
 header li {
-    margin: 10px;
+    margin: 10px 20px;
 }
 
 header li a {
+    font-size: 20px;
     color: black;
     text-decoration: none;
     background-color: whitesmoke;
@@ -60,58 +64,75 @@ header main {
 
 /* Body */
 
-h2, #top-comment {
-    font-size: 17px;
-    background-color: rebeccapurple;
-    color: whitesmoke;
-    padding: 20px 50px;
-    margin: 40px 0px 70px 0px;
-    box-shadow: 0px 0px 10px 0px rgba(102, 51, 153, 0.733);
-}
-
 h1 {
     font-size: 40px;
     font-weight: bold;
+    /*background: -webkit-linear-gradient(#58a5ff, #a900f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+}
+
+h2, aside {
+    font-size: 17px;
+    /*background-color: rebeccapurple;*/
+    background-color: rgb(0, 60, 150);
+    color: whitesmoke;
+    padding: 20px 50px;
 }
 
 h2 {
     font-size: 30px;
     margin: 20px 0px auto 0px;
+    border-left: 2px solid rgb(176, 228, 248);
+    border-right: 2px solid rgb(176, 228, 248);
+}
+
+aside {
+    /*box-shadow: 0px 0px 3px 0px rgba(102, 51, 153, 0.733);*/
+    box-shadow: 0px 0px 5px 0px rgba(0, 60, 150, 0.733);
+    margin: 40px 2px 70px 2px;
 }
 
 .code, .code-inline, label {
-    color: rgb(86, 24, 148);
+    /*color: rgb(86, 24, 148);*/
+    color: rgb(0, 60, 150);
 }
 
 .code {
-    font-family: monospace;
     background-color: whitesmoke;
     padding: 5px 10px;
     border-radius: 12px;
+    font-family: monospace;
     font-weight: 500;
     font-size: 18px;
 }
 
 .code-inline {
-    font-family: monospace;
     background-color: whitesmoke;
     border-radius: 5px;
+    padding: 0px 2px;
+    font-family: monospace;
     font-weight: 500;
     font-size: 16px;
-    /*box-shadow: inset 0px 0px 10px 2px plum;*/
+    box-shadow: inset 0px 0px 2px 0px rgb(155, 216, 240);
 }
 
-label {
+label.copier {
     background: rgb(82, 255, 96);
+    border-radius: 50%;
     padding: 0px 5px 3px 5px;
     font-size: 10px;
-    /*font-weight: bold;*/
+    font-weight: bold;
     text-align: center;
-    border-radius: 20px;
     cursor: pointer;
   }
 
-  label textarea {
+label.copier:hover {
+    color: whitesmoke;
+    background: rgb(186, 82, 255);
+}
+
+label textarea {
     position: absolute;
     top: -9999px;
     left: -9999px;
@@ -129,24 +150,25 @@ thead {
 
 thead td {
     padding: 10px 200px 20px 10px;
-    border: none;
-    border-bottom: 1px solid rgb(194, 125, 194);
+    border-bottom: 1px solid rgb(155, 216, 240);
 }
 
 tbody tr:nth-child(even) {
-    background-color: rgb(194, 125, 194);
+    /*background-color: rgb(194, 125, 194);*/
+    background-color: rgb(155, 216, 240);
 }
 
 td {
     padding: 20px 10px;
     vertical-align: top;
-    /*border-bottom: 1px solid rgb(194, 125, 194);*/
 }
 
 td.last-row {
     padding: 20px 10px 25px;
-    vertical-align: top;
-    border: none;
+}
+
+td.first-row {
+    padding: 25px 10px 20px;
 }
 
 tfoot {
@@ -155,11 +177,12 @@ tfoot {
 }
 
 tfoot td {
+    font-size: 14px;
     padding-right: 20px;
-    border-bottom: 1px solid rgb(194, 125, 194);
+    border-bottom: 1px solid rgb(155, 216, 240);
 }
 
-a.author {
+a.aside-link {
     color: whitesmoke;
     padding: 3px;
     border: 1px solid whitesmoke;
@@ -167,10 +190,11 @@ a.author {
     text-decoration: none;
 }
 
-a.author:hover {
-    background-color: plum;
-    padding: 3px;
-    border: 1px solid plum;
+a.aside-link:hover {
+    color: rgb(0, 60, 150);
+    background-color: whitesmoke;
+    border: 1px solid whitesmoke;
     border-radius: 5px;
+    padding: 3px;
     text-decoration: none;
 }
