@@ -60,11 +60,13 @@ header main {
 
 /* Body */
 
-#top-comment {
+h2, #top-comment {
+    font-size: 17px;
     background-color: rebeccapurple;
     color: whitesmoke;
     padding: 20px 50px;
-    margin: 20px auto 50px auto;
+    margin: 40px 0px 70px 0px;
+    box-shadow: 0px 0px 10px 0px rgba(102, 51, 153, 0.733);
 }
 
 h1 {
@@ -74,10 +76,11 @@ h1 {
 
 h2 {
     font-size: 30px;
-    background-color: rebeccapurple;
-    color: plum;
-    padding: 20px 50px;
-    margin: 20px auto auto auto;
+    margin: 20px 0px auto 0px;
+}
+
+.code, .code-inline, label {
+    color: rgb(86, 24, 148);
 }
 
 .code {
@@ -87,6 +90,35 @@ h2 {
     border-radius: 12px;
     font-weight: 500;
     font-size: 18px;
+}
+
+.code-inline {
+    font-family: monospace;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    /*box-shadow: inset 0px 0px 10px 2px plum;*/
+}
+
+label {
+    background: rgb(82, 255, 96);
+    padding: 0px 5px 3px 5px;
+    font-size: 10px;
+    /*font-weight: bold;*/
+    text-align: center;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  label textarea {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+table {
+    margin-top: 10px;
 }
 
 thead {
