@@ -12,16 +12,16 @@ const dao = {
 
 let rand = randNumb(dao['readable'].length);
 
-for (let prop in dao) {
-    switch(prop) {
+for (let translation in dao) {
+    switch(translation) {
         case 'readable':
-            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[prop][rand]}`)
+            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[translation][rand]}`)
             break
         case 'poetic':
-            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[prop][rand]}`)
+            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[translation][rand]}`)
             break
         case 'scholarly':
-            message.push(`Chapter ${(rand + 1)} by Stephen Addiss & Stanley Lombardo (scholarly): ${dao[prop][rand]}`)
+            message.push(`Chapter ${(rand + 1)} by Stephen Addiss & Stanley Lombardo (scholarly): ${dao[translation][rand]}`)
             break
         default:
             message.push('Could not fetch the translations.')
