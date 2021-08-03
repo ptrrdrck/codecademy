@@ -44,6 +44,7 @@ formattedMessage(message);
 //DOM management
 
 //making 'formatted' variable available outside of the function
+//line-breaks not working
 let formatted = message.join('\n\n');
 
 //not working
