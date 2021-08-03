@@ -46,8 +46,10 @@ formattedMessage(message);
 //making 'formatted' variable available outside of the function
 let formatted = message.join('\n\n');
 
+//not working
 const display = document.getElementById('display');
 
+//not working
 const drip = document.getElementById('drip');
 
 //replaced 'formattedMessage' with 'formatted' variable to get initial message to display via innerHTML
@@ -56,6 +58,7 @@ display.innerHTML = formatted;
 //testing formatting with <pre>
 //display.innerHTML = "<pre>" + formatted + "</pre>";
 
+//not working
 drip.addEventListener('click', () => {
     display.innerHTML = formatted;
 });
