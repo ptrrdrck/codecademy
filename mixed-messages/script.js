@@ -1,3 +1,7 @@
+//dao drip (@ptrrdrck 2021)
+//displays the same random chapter of the daodejing
+//from three characteristically distinct translations
+
 const randNumb = num => {
     return Math.floor(Math.random() * num);
 }
@@ -28,9 +32,30 @@ for (let translation in dao) {
     }
 }
 
-const formattedMessage = text => {
+/*
+const formattedMessage = () => {
     let formatted = message.join('\n\n');
     console.log(formatted);
 }
 
 formattedMessage(message);
+*/
+
+//DOM management
+
+//making 'formatted' variable available outside of the function
+let formatted = message.join('\n\n');
+
+const display = document.getElementById('display');
+
+const drip = document.getElementById('drip');
+
+//replaced 'formattedMessage' with 'formatted' variable to get initial message to display via innerHTML
+display.innerHTML = formatted;
+
+//testing formatting with <pre>
+//display.innerHTML = "<pre>" + formatted + "</pre>";
+
+drip.addEventListener('click', () => {
+    display.innerHTML = formatted;
+});
