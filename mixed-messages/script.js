@@ -63,3 +63,8 @@ display.innerHTML = formatted;
 drip.addEventListener('click', () => {
     display.innerHTML = formatted;
 });
+
+//temporary fix for button "display new random message" behavior
+function refreshPage(){
+    window.location.reload();
+} 
