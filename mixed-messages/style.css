@@ -6,52 +6,28 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 50%, rgba(255,255,255,1) 100%);
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
-    margin-top: 50px;
 }
 
 header {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 50px;
 }
 
 h1 {
     font-weight: 400;
     font-size: 32px;
-    margin: 20px 20px;
-}
-
-#drip {
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 4px 16px;
-    font-weight: 400;
-    font-size: 30px;
-    letter-spacing: 1px;
-    margin: 20px 20px;
-    transition: 1s box-shadow;
-}
-
-#drip:hover {
-    background-color: white;
-    color: black;
-    box-shadow: 0 5px 35px 0px rgba(37, 25, 25, 0.15);
-    cursor: pointer;
-}
-
-#drip:active {
-    background-color: white;
-    color: black;
-}
-
-#display {
-    line-height: 1.3;
-    margin: 30px 20%;
+    margin: 20px 30px;
 }
 
 .fade-in {
@@ -68,6 +44,65 @@ h1 {
   }
 }
 
+@-webkit-keyframes in {
+    from   {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes out {
+    0%   {
+        -webkit-transform: rotate(360deg);
+    }
+    100% {
+        -webkit-transform: rotate(0deg);
+    }
+}
+
+#drip {
+    /*background-color: black;*/
+    background: rgb(63,199,251);
+    background: radial-gradient(circle, rgba(222,70,252,1) 0%, rgba(63,199,251) 70%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 30px;
+    padding: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:3vw;
+    height:3vw;
+    line-height: 3vw;
+    letter-spacing: 1px;
+    margin: 20px 20px;
+    transition: 1s box-shadow;
+    -webkit-animation: in 0.5s;
+}
+
+#drip:hover {
+    /*background-color: white;
+    color: black;*/
+    box-shadow: 0 5px 35px 0px rgba(37, 25, 25, 0.15);
+    cursor: pointer;
+    -webkit-animation: out 0.5s;
+}
+
+/*
+#drip:active {
+    background-color: white;
+    color: black;
+}
+*/
+
+#display {
+    line-height: 1.3;
+    margin: 30px 20%;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -78,4 +113,9 @@ footer img {
     margin: 30px;
     width: 50px;
     height: 50px;
+    -webkit-animation: in 0.5s;
+}
+
+footer img:hover {
+    -webkit-animation: out 0.5s;
 }
