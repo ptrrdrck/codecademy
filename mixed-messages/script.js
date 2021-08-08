@@ -19,10 +19,10 @@ let rand = randNumb(dao['readable'].length);
 for (let translation in dao) {
     switch(translation) {
         case 'readable':
-            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[translation][rand]}`)
+            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[translation][rand]}` + `<br><br>`) /*" + `<br><br>`" temporary formatting fix.*/
             break
         case 'poetic':
-            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[translation][rand]}`)
+            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[translation][rand]}` + `<br><br>`) /*" + `<br><br>`" temporary formatting fix.*/
             break
         case 'scholarly':
             message.push(`Chapter ${(rand + 1)} by Stephen Addiss & Stanley Lombardo (scholarly): ${dao[translation][rand]}`)
@@ -43,22 +43,19 @@ formattedMessage(message);
 */
 
 
-//DOM management
+//Working on DOM integration:
 
 //Making 'formatted' message variable available outside of the original function.
 //Line-breaks "\n\n" NOT working.
 let formatted = message.join('\n\n');
 
-//Testing message formatting with <pre> tag. Not ideal.
-//display.innerHTML = "<pre>" + formatted + "</pre>";
-
-//NOT working.
+//Working but throwing: "ReferenceError: document is not defined"
 const display = document.getElementById('display');
+
+display.innerHTML = formatted;
 
 //NOT working.
 const drip = document.getElementById('drip');
-
-display.innerHTML = formatted;
 
 //NOT working.
 drip.addEventListener('click', () => {
