@@ -1,6 +1,6 @@
 //dao drip (@ptrrdrck 2021)
-//displays the same random chapter of the daodejing
-//from three characteristically distinct translations
+//Displays the same random chapter of the Daodejing
+//from three characteristically distinct translations.
 
 const randNumb = num => {
     return Math.floor(Math.random() * num);
@@ -32,6 +32,7 @@ for (let translation in dao) {
     }
 }
 
+//Original working function that printed to console. 
 /*
 const formattedMessage = () => {
     let formatted = message.join('\n\n');
@@ -41,30 +42,30 @@ const formattedMessage = () => {
 formattedMessage(message);
 */
 
+
 //DOM management
 
-//making 'formatted' variable available outside of the function
-//line-breaks not working
+//Making 'formatted' message variable available outside of the original function.
+//Line-breaks "\n\n" NOT working.
 let formatted = message.join('\n\n');
 
-//not working
-const display = document.getElementById('display');
-
-//not working
-const drip = document.getElementById('drip');
-
-//replaced 'formattedMessage' with 'formatted' variable to get initial message to display via innerHTML
-display.innerHTML = formatted;
-
-//testing formatting with <pre>
+//Testing message formatting with <pre> tag. Not ideal.
 //display.innerHTML = "<pre>" + formatted + "</pre>";
 
-//not working
+//NOT working.
+const display = document.getElementById('display');
+
+//NOT working.
+const drip = document.getElementById('drip');
+
+display.innerHTML = formatted;
+
+//NOT working.
 drip.addEventListener('click', () => {
     display.innerHTML = formatted;
 });
 
-//temporary fix for button "display new random message" behavior
+//Temporary fix for 'drip' button display-new-random-message behavior.
 function refreshPage(){
     window.location.reload();
 } 
