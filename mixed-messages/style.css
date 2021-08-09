@@ -72,14 +72,14 @@ h1 {
     }
 }
 
-/*@keyframes hover {
+@keyframes hover {
     0%   {
         -webkit-transform: scale(1.032);
     }
     100% {
         -webkit-transform: scale(1);
     }
-}*/
+}
 
 #drip {
     background: rgb(63,199,251);
@@ -107,7 +107,7 @@ h1 {
     box-shadow: 0 5px 35px 0px rgba(37, 25, 25, 0.15);*/
     cursor: pointer;
     -webkit-animation: out 0.5s;
-    animation: out 0.5s;
+    animation: hover 0.5s;
 }
 
 #drip:active {
