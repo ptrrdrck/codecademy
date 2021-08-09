@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 
 <html lang="en">
   <head>
@@ -25,4 +26,148 @@
     <script src="./script.js" type="text/javascript"></script>
     -->
   </body>
+=======
+<html lang="en">
+    <head>
+        <title>Simple site code writing cheatsheet</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="./styles.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <main>
+                <h1>Simple code writing guide for basic</h1>
+            </main>
+            <nav>
+                <ul>
+                    <li><a href="#html">HTML5</a></li>
+                    <li><a href="#css">CSS</a></li>
+                    <li><a href="#js">JS</a></li>
+                </ul>
+            </nav>
+            <main>
+                <h1>files.</h1>
+            </main>
+        </header>
+        <aside>
+            <p>A beginner's cheatsheet arranged and annotated for no-bs writing of <strong><em>basic</em></strong> site files. Feel free to suggest edits and open pull requests on <a class="aside-link" href="https://github.com/ptrrdrck/cheatsheet/issues" target="_blank">GitHub</a>.</p>
+            <p><label class="copier"></label> = copy preceding <span class="code-inline">text</span></p>
+        </aside>
+        <section id="html">
+            <h2>HTML5</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <td>Tag</td>
+                        <td>Place...</td>
+                        <td>Details</td>
+                        <td>Purpose</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="first-row"><span class="code">&lt;html&gt;</span></td>
+                        <td class="first-row">Below initial <span class="code-inline">&lt;!DOCTYPE html&gt;</span><label class="copier"><textarea onclick="this.select(); document.execCommand('copy');">&lt;!DOCTYPE html&gt;</textarea></label> declaration.</td>
+                        <td class="first-row">Include <span class="code-inline">lang="en"</span><label class="copier"><textarea onclick="this.select(); document.execCommand('copy');">lang="en"</textarea></label> attribute.</td>
+                        <td class="first-row">Document wrapper</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;head&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;html&gt;</span>, above <span class="code-inline">&lt;body&gt;</span>.</td>
+                        <td></td>
+                        <td>Undisplayed (meta) page info</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;meta&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;head&gt;</span>.</td>
+                        <td>Include <span class="code-inline">http-equiv="Content-Type" content="text/html; charset=UTF-8"</span><label class="copier"><textarea onclick="this.select(); document.execCommand('copy');">http-equiv="Content-Type" content="text/html; charset=UTF-8"</textarea></label> attributes.</td>
+                        <td>Page attributes</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;title&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;head&gt;</span>.</td>
+                        <td></td>
+                        <td>Browser tab page title</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;link&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;head&gt;</span>.</td>
+                        <td>Include <span class="code-inline">rel="stylesheet" type="text/css"</span><label class="copier"><textarea onclick="this.select(); document.execCommand('copy');">rel="stylesheet" type="text/css"</textarea></label> attributes.</td>
+                        <td>Linking stylesheets, scripts</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;script&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;head&gt;</span>, or end of <span class="code-inline">&lt;body&gt;</span>.</td>
+                        <td></td>
+                        <td>Inline scripts</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;body&gt;</span></td>
+                        <td>Below <span class="code-inline">&lt;head&gt;</span>.</td>
+                        <td></td>
+                        <td>Page content wrapper</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;header&gt;</span></td>
+                        <td>Below <span class="code-inline">&lt;body&gt;</span>.</td>
+                        <td></td>
+                        <td>Leading content</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;nav&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;header&gt;</span>.</td>
+                        <td>Links setup as <span class="code-inline">&lt;ul&gt;</span> + <span class="code-inline">&lt;li&gt;</span>.</td>
+                        <td>Navigation</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;main&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;header&gt;</span>.</td>
+                        <td>Good place for the <span class="code-inline">&lt;h1&gt;</span> and/or logo.</td>
+                        <td>Banner image/text</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;section&gt;</span></td>
+                        <td>Between <span class="code-inline">&lt;header&gt;</span> and <span class="code-inline">&lt;footer&gt;</span>.</td>
+                        <td>Set a unique <span class="code-inline">id="name"</span><label class="copier"><textarea onclick="this.select(); document.execCommand('copy');">id="name"</textarea></label> attribute for navigation.</td>
+                        <td>Blocks of content</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;aside&gt;</span></td>
+                        <td>Between <span class="code-inline">&lt;header&gt;</span> and <span class="code-inline">&lt;footer&gt;</span>.</td>
+                        <td></td>
+                        <td>Non-primary blocks of content</td>
+                    </tr>
+                    <tr>
+                        <td><span class="code">&lt;div&gt;</span></td>
+                        <td>Within <span class="code-inline">&lt;body&gt;</span>.</td>
+                        <td></td>
+                        <td>One-off blocks of structure-content</td>
+                    </tr>
+                    <tr>
+                        <td class="last-row"><span class="code">&lt;footer&gt;</span></td>
+                        <td class="last-row">End of <span class="code-inline">&lt;body&gt;</span>.</td>
+                        <td class="last-row"></td>
+                        <td class="last-row">Helpful page info</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td colspan="4"><em>Last updated July 2021.</em></td>
+                </tfoot>
+            </table>
+        </section>
+        <br><br><br>
+        <section id="css">
+            <h2>CSS</h2>
+        </section>
+        <br><br><br>
+        <section id="js">
+            <h2>JS</h2>
+        </section>
+        <br><br><br>
+        <footer>
+            <br><br><br>
+            <a href="https://twitter.com/ptrrdrck" target="_blank"><img src="./images/tw.png" height="36" /></a><a href="https://github.com/ptrrdrck" target="_blank"><img src="./images/gh.png" height="36" /></a>
+        </footer>
+    </body>
+>>>>>>> bb37b02d930bf96f6547a3e1b1c4d58bf7ee62b7
 </html>
