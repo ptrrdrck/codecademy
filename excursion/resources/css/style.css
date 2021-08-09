@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+body {
+    color: white;
+    background-color: black;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 50px;
+    color: white;
+}
+
+a {
+    font-size: 16px;
+    color: aquamarine;
+}
+
+h2 {
+    font-weight: 300;
+    font-size: 42px;
+}
+
+p {
+    color: gray;
+    font-size: 21px;
+}
+
+.footer {
+    text-align: right;
+}
