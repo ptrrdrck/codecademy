@@ -41,13 +41,15 @@ a {
     min-width: 20%;
     clear: both;
     text-align: center;
-    padding: 4px 4px;
+    padding: 4px 0 4px 12px;
     border-radius: 2px;
 }
 
 a:hover {
     font-style: italic;
 }
+
+
 
 @keyframes fadeIn {
     from {
@@ -61,6 +63,21 @@ a:hover {
 .fade-in {
 	animation: fadeIn 1s;
   	opacity: 1;
+}
+
+.back {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    left:50px;
+    margin: 0;
+    padding: 2px;
+    min-width: 10%;
+}
+
+.emoji {
+    font-size: 26px;
+    margin: 0 2px;
 }
 
 #about {
