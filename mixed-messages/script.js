@@ -54,15 +54,30 @@ const display = document.getElementById('display');
 
 display.innerHTML = formatted;
 
+
+/*
 //NOT working.
-const drip = document.getElementById('drip');
+var drip = document.getElementById('drip');
 
 //NOT working.
-drip.addEventListener('click', () => {
+drip.onclick = function() {
     display.innerHTML = formatted;
 });
+*/
+
 
 //Temporary fix for 'drip' button display-new-random-message behavior.
 function refreshPage(){
     window.location.reload();
-} 
+}
+
+
+/*
+//Conflicting with reload function.
+var button = document.getElementById("drip"),
+  count = 0;
+button.onclick = function() {
+  count += 1;
+  counter.innerHTML = "Click me: " + count;
+};
+*/
