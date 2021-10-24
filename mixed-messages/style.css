@@ -74,7 +74,7 @@ h1 {
 
 @keyframes hover {
     0%   {
-        -webkit-transform: scale(1.032);
+        -webkit-transform: scale(1.03);
     }
     100% {
         -webkit-transform: scale(1);
@@ -88,31 +88,27 @@ h1 {
     border: none;
     border-radius: 50%;
     font-size: 30px;
-    padding: 3vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    width:3vw;
-    height:3vw;
-    line-height: 3vw;
+    width: 60px;
+    height: 60px;
+    padding: 39px 39px 39px 40px;
     letter-spacing: 1px;
     margin: 20px 20px;
-    -webkit-animation: in 0.5s;
-    animation: in 0.5s;
-    /*transition: 0.5s box-shadow;*/
+    /*-webkit-animation: in 0.5s;
+    animation: in 0.5s;*/
 }
 
 #drip:hover {
-    /*box-shadow: 0 5px 35px 0px rgba(63, 199, 251, 0.5);
-    box-shadow: 0 5px 35px 0px rgba(37, 25, 25, 0.15);*/
     cursor: pointer;
-    -webkit-animation: out 0.5s;
-    animation: hover 0.5s;
+    -webkit-animation: hover 0.5s ease;
+    animation: hover 0.5s ease;
 }
 
 #drip:active {
-    -webkit-animation: click 0.18s;
-    animation: click 0.18s;
+    -webkit-animation: click 0.18s ease-in-out;
+    animation: click 0.18s ease-in-out;
 }
 
 #display {
@@ -130,8 +126,8 @@ footer {
 
 footer img {
     margin: 30px;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     -webkit-animation: in 0.5s;
     animation: in 0.5s;
 }
