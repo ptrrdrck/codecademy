@@ -22,6 +22,7 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    margin-bottom: 80px;
 }
 
 h1 {
@@ -138,6 +139,7 @@ footer {
 
 footer img {
     margin: 40px;
+    margin-bottom: 100px;
     width: calc(80px + 1vw);
     height: calc(80px + 1vw);
     -webkit-animation: in 0.5s;
