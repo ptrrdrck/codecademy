@@ -87,6 +87,7 @@ h1 {
     border: none;
     border-radius: 50%;
     font-size: calc(1.9rem + 1vw);
+    font-weight: 400;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,22 +113,22 @@ h1 {
 
 @media (min-width: 0px) {
     #display {
-        font-size: calc(1rem + 1vw);
-        margin: 30px 12%;
+        font-size: clamp(1.5rem, calc(1.5rem + 2vw), 1.8rem);
+        margin: 30px 10%;
     }
 }
   
-@media (min-width: 500px) {
+/*@media (min-width: 748px) {
     #display {
-        font-size: calc(1rem + 1vw);
+        font-size: calc(1.3rem + 1vw);
         margin: 30px 15%;
     }
-}
+}*/
   
-@media (min-width: 1001px){
+@media (min-width: 1150px){
     #display {
-        font-size: clamp(1rem, 1.48rem, calc(1rem + 1vw));;
-        margin: 30px 18%;
+        font-size: clamp(1.8rem, calc(1.8rem + 2vw), 2.2rem);
+        margin: 30px 16%;
     }
 }
 
