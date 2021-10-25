@@ -112,8 +112,8 @@ h1 {
 
 @media (min-width: 0px) {
     #display {
-        font-size: 1rem;
-        margin: 30px 10%;
+        font-size: clamp(1rem, 1.3rem, calc(1rem + 1vw));
+        margin: 30px 12%;
     }
 }
   
@@ -126,8 +126,8 @@ h1 {
   
 @media (min-width: 1001px){
     #display {
-        font-size: 1.48rem;
-        margin: 30px 20%;
+        font-size: clamp(1rem, 1.48rem, calc(1rem + 1vw));;
+        margin: 30px 18%;
     }
 }
 
