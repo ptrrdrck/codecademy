@@ -19,10 +19,10 @@ let rand = randNumb(dao['readable'].length);
 for (let translation in dao) {
     switch(translation) {
         case 'readable':
-            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[translation][rand]}` + `<br /><span id="darr">&darr;</span>`) /*" + `<br><br>`" temporary formatting fix.*/
+            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[translation][rand]}` + `<br /><span id="darr">&#9737;</span>`) /*" + `<br><br>`" temporary formatting fix.*/
             break
         case 'poetic':
-            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[translation][rand]}` + `<br /><span id="darr">&darr;</span>`)
+            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[translation][rand]}` + `<br /><span id="darr">&#9737;</span>`)
             break
         case 'scholarly':
             message.push(`Chapter ${(rand + 1)} by Stephen Addiss & Stanley Lombardo (scholarly): ${dao[translation][rand]}`)
