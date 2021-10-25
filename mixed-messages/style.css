@@ -7,7 +7,7 @@
 }
 
 html {
-    min-height: 100%;
+    height: 100%;
     background: rgb(255,255,255);
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 50%, rgba(255,255,255,1) 100%);
     font-size: 17px;
@@ -22,12 +22,11 @@ header {
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    min-height: 100%;
 }
 
 h1 {
     font-weight: 400;
-    font-size: 32px;
+    font-size: 1.9rem;
     margin: 20px 30px;
 }
 
@@ -87,7 +86,7 @@ h1 {
     color: white;
     border: none;
     border-radius: 50%;
-    font-size: 30px;
+    font-size: 1.9rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,8 +101,8 @@ h1 {
 
 #drip:hover {
     cursor: pointer;
-    -webkit-animation: hover 0.5s ease;
-    animation: hover 0.5s ease;
+    -webkit-animation: hover 0.36s;
+    animation: hover 0.36s;
 }
 
 #drip:active {
@@ -111,11 +110,31 @@ h1 {
     animation: click 0.18s ease-in-out;
 }
 
+@media (min-width: 0px) {
+    #display {
+        font-size: 1rem;
+        margin: 30px 10%;
+    }
+}
+  
+@media (min-width: 500px) {
+    #display {
+        font-size: calc(1rem + 1vw);
+        margin: 30px 15%;
+    }
+}
+  
+@media (min-width: 1001px){
+    #display {
+        font-size: 1.5rem;
+        margin: 30px 20%;
+    }
+}
+
 #display {
-    font-size: clamp(1rem, 1.3rem, calc(1rem + 1vw));
+    /*font-size: clamp(1rem, 1.3rem, calc(1rem + 1vw));*/
     line-height: 1.3;
     letter-spacing: 0.22px;
-    margin: 30px 20%;
 }
 
 footer {
