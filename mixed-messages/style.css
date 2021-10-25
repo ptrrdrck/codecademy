@@ -97,8 +97,6 @@ h1 {
     padding: calc(70px + 1vw);
     letter-spacing: 1px;
     margin: 20px;
-    /*-webkit-animation: in 0.5s;
-    animation: in 0.5s;*/
 }
 
 #drip:hover {
@@ -114,15 +112,15 @@ h1 {
 
 @media (min-width: 0px) {
     #display {
-        font-size: clamp(1.5rem, calc(1.5rem + 2vw), 1.8rem);
+        font-size: clamp(1.5rem, calc(1.5rem + 1vw), 1.8rem);
         margin: 30px 10%;
     }
 }
   
 @media (min-width: 1150px){
     #display {
-        font-size: clamp(1.8rem, calc(1.8rem + 2vw), 2.2rem);
-        margin: 30px 16%;
+        font-size: clamp(1.5rem, calc(1.5rem + 1vw), 1.8rem);
+        margin: 30px 14%;
     }
 }
 
