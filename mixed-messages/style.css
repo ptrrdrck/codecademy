@@ -112,7 +112,7 @@ h1 {
 
 @media (min-width: 0px) {
     #display {
-        font-size: clamp(1rem, 1.3rem, calc(1rem + 1vw));
+        font-size: calc(1rem + 1vw);
         margin: 30px 12%;
     }
 }
