@@ -26,8 +26,8 @@ header {
 
 h1 {
     font-weight: 400;
-    font-size: 1.9rem;
-    margin: 20px 30px;
+    font-size: calc(1.9rem + 1vw);
+    margin: 20px calc(15px + 1vw);;
 }
 
 @keyframes fadeIn {
@@ -86,13 +86,13 @@ h1 {
     color: white;
     border: none;
     border-radius: 50%;
-    font-size: 1.9rem;
+    font-size: calc(1.9rem + 1vw);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 60px;
     height: 60px;
-    padding: 50px;
+    padding: calc(50px + 1vw);
     letter-spacing: 1px;
     margin: 20px;
     /*-webkit-animation: in 0.5s;
@@ -144,8 +144,8 @@ footer {
 
 footer img {
     margin: 40px;
-    width: 70px;
-    height: 70px;
+    width: calc(80px + 1vw);
+    height: calc(80px + 1vw);
     -webkit-animation: in 0.5s;
     animation: in 0.5s;
 }
