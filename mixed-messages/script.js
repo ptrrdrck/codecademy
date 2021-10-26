@@ -19,18 +19,18 @@ let rand = randNumb(dao['readable'].length);
 for (let translation in dao) {
     switch(translation) {
         case 'readable':
-            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[translation][rand]}` + `<br /><span id="darr">&#9737;</span>`) /*" + `<br><br>`" temporary formatting fix.*/
-            break
+            message.push(`Chapter ${(rand + 1)} by Stephen Mitchell (readable): ${dao[translation][rand]}` + `<br /><span id="seperator">&#9737;</span>`);
+            break;
         case 'poetic':
-            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[translation][rand]}` + `<br /><span id="darr">&#9737;</span>`)
-            break
+            message.push(`Chapter ${(rand + 1)} by Gia-Fu Feng & Jane English (poetic): ${dao[translation][rand]}` + `<br /><span id="seperator">&#9737;</span>`);
+            break;
         case 'scholarly':
-            message.push(`Chapter ${(rand + 1)} by Stephen Addiss & Stanley Lombardo (scholarly): ${dao[translation][rand]}`)
-            break
+            message.push(`Chapter ${(rand + 1)} by Stephen Addiss & Stanley Lombardo (scholarly): ${dao[translation][rand]}`);
+            break;
         default:
-            message.push('Could not fetch the translations.')
-    }
-}
+            message.push('Could not fetch the translations.');
+    };
+};
 
 //Original working function that printed to console. 
 /*
@@ -49,11 +49,7 @@ formattedMessage(message);
 //Line-breaks "\n\n" NOT working.
 let formatted = message.join('\n\n');
 
-//Working but throwing: "ReferenceError: document is not defined"
-const display = document.getElementById('display');
-
-display.innerHTML = formatted;
-
+document.getElementById('display').innerHTML = formatted;
 
 /*
 //NOT working.
@@ -78,6 +74,6 @@ var button = document.getElementById("drip"),
   count = 0;
 button.onclick = function() {
   count += 1;
-  counter.innerHTML = "Click me: " + count;
+  counter.innerHTML = "drips: " + count;
 };
 */
