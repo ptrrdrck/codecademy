@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+/**
+    Dao  Drip © Peter Rodrick 2021.
+    **/
+
+/**
+    Global styles.
+    **/
+
 * {
     margin: 0;
     padding: 0;
@@ -7,28 +15,15 @@
 }
 
 html {
-    height: 100%;
+    min-height: 100%;
     background: rgb(63, 201, 255);
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: calc(40px + 2vw);
-    margin-bottom: calc(15px + 2vw);
-}
-
-h1 {
-    font-weight: 400;
-    font-size: calc(1.9rem + 1vw);
-    margin: 20px calc(10px + 2vw);
-}
+/**
+    Animations & associated classes.
+    **/
 
 @keyframes fadeIn {
     from {
@@ -80,10 +75,31 @@ h1 {
     }
 }
 
+/**
+    Header & Drip button.
+    **/
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: calc(40px + 2vw);
+    margin-bottom: calc(15px + 2vw);
+}
+
+h1 {
+    font-weight: 400;
+    font-size: calc(1.9rem + 1vw);
+    margin: 20px calc(10px + 2vw);
+}
+    
 #drip {
     background: rgb(255,255,255);
     /*background: radial-gradient(circle, rgba(222, 70, 252, 1) 0%, rgba(63, 199, 251) 68%);*/
     background: radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -webkit-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -moz-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -o-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
     color: #000;
     border: none;
     border-radius: 50%;
@@ -97,6 +113,7 @@ h1 {
     padding: calc(70px + 1vw);
     letter-spacing: 1px;
     margin: 20px;
+    box-shadow: 0px -4px 10px rgb(255, 245, 183), 0px 4px 15px rgba(66, 64, 51, 0.25);
 }
 
 #drip:hover {
@@ -109,6 +126,10 @@ h1 {
     -webkit-animation: click 0.18s ease-in-out;
     animation: click 0.18s ease-in-out;
 }
+
+/**
+    Message container.
+    **/
 
 @media (min-width: 0px) {
     #display {
@@ -130,8 +151,11 @@ h1 {
     border: none;
     border-radius: 10px;
     padding: 5%;
-    background: rgb(255,255,255);
+    background: rgba(255, 168, 97, 1);
     background: radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -webkit-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -moz-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -o-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
 }
 
 #seperator {
@@ -141,14 +165,19 @@ h1 {
     margin: 40px 0px;
 }
 
+/**
+    Footer.
+    **/
+
 footer {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 footer img {
-    margin: 80px 40px 140px;
+    margin: calc(40px + 2vw) auto;
     width: calc(80px + 1vw);
     height: calc(80px + 1vw);
     -webkit-animation: in 0.5s;
@@ -158,4 +187,33 @@ footer img {
 footer img:hover {
     -webkit-animation: out 0.5s;
     animation: out 0.5s;
+}
+
+footer a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 0 auto calc(40px + 2vw);
+    position: relative;
+    padding-bottom: 2px;
+}
+
+footer a:hover {
+    font-style: italic;
+}
+
+footer a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: rgba(255, 168, 97, 1);
+    background: radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -webkit-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -moz-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    background: -o-radial-gradient(circle, rgba(255, 168, 97, 1) 0%, rgba(255, 232, 101, 1) 68%);
+    z-index: -1;
 }
