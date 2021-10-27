@@ -1,4 +1,6 @@
-//dao drip (@ptrrdrck 2021)
+/**
+    Dao  Drip © Peter Rodrick 2021.
+    **/
 //Displays the same random chapter of the Daodejing
 //from three characteristically distinct translations.
 
@@ -29,8 +31,8 @@ for (let translation in dao) {
             break;
         default:
             message.push('Could not fetch the translations.');
-    };
-};
+    }
+}
 
 //Original working function that printed to console. 
 /*
@@ -41,9 +43,6 @@ const formattedMessage = () => {
 
 formattedMessage(message);
 */
-
-
-//Working on DOM integration:
 
 //Making 'formatted' message variable available outside of the original function.
 //Line-breaks "\n\n" NOT working.
@@ -61,19 +60,7 @@ drip.onclick = function() {
 });
 */
 
-
 //Temporary fix for 'drip' button display-new-random-message behavior.
 function refreshPage(){
     window.location.reload();
 }
-
-
-/*
-//Conflicting with reload function.
-var button = document.getElementById("drip"),
-  count = 0;
-button.onclick = function() {
-  count += 1;
-  counter.innerHTML = "drips: " + count;
-};
-*/
