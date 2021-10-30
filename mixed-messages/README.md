@@ -1,4 +1,5 @@
 # Dao Drip
+
 a.k.a Mixed Messages
 
 ## Planning
@@ -15,7 +16,7 @@ The philosophical text of the Daodejing.
 
 - Choose three English translations of the Daodejing.
   - Break up chapters into a JS object
-- Create the Dao message function
+- Create the drip message function
   - Display a random chapter
   - When called:
     - return a chapter number
@@ -23,4 +24,4 @@ The philosophical text of the Daodejing.
     - return that same chapter's text from the second translation
     - return that same chapter's text from the third translation
 - New random message button
-  - Call dao message function
+  - Call drip message function
