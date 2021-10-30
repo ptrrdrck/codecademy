@@ -1,9 +1,5 @@
-# "Mixed Messages"
-
-## Requirements
-
-- Randomized message output
-- At least three pieces of data per output
+# Dao Drip
+a.k.a Mixed Messages
 
 ## Planning
 
@@ -15,15 +11,16 @@ The philosophical text of the Daodejing.
 
 "As a _user_, I want to _read small passages of the Daodejing_, so that _I may learn it's wisdom a little bit at a time_."
 
-### Build
+### Build notes
 
-- Choose an English translation of the Daodejing
+- Choose three English translations of the Daodejing.
   - Break up chapters into a JS object
-- Dao message function
-  - Display initial random chapter
+- Create the Dao message function
+  - Display a random chapter
   - When called:
     - return a chapter number
-    - return a that chapter's text
-    - return a random emoji?
+    - return that chapter's text
+    - return that same chapter's text from the second translation
+    - return that same chapter's text from the third translation
 - New random message button
   - Call dao message function
