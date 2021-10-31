@@ -148,14 +148,14 @@ h1 {
     **/
 
 @media (min-width: 0px) {
-    #display {
+    #display, .sources {
         font-size: clamp(1rem, calc(1rem + 1vw), 1.5rem);
         margin: 30px 10%;
     }
 }
   
 @media (min-width: 1150px){
-    #display {
+    #display, .sources {
         font-size: clamp(1.5rem, calc(1.5rem + 1vw), 1.8rem);
         margin: 30px 14%;
     }
@@ -179,6 +179,28 @@ h1 {
     align-items: center;
     justify-content: center;
     margin: 40px 0px;
+}
+
+.sources {
+    line-height: 1.3;
+    letter-spacing: 0.22px;
+    border: none;
+    border-radius: 10px;
+    padding: 5% 6%;
+    color: #fff;
+    background: rgb(231,34,206);
+    background: radial-gradient(circle, rgba(231,34,206,1) 0%, rgba(172,34,231,1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(231,34,206,1) 0%, rgba(172,34,231,1) 100%);
+    background: -moz-radial-gradient(circle, rgba(231,34,206,1) 0%, rgba(172,34,231,1) 100%);
+    background: -o-radial-gradient(circle, rgba(231,34,206,1) 0%, rgba(172,34,231,1) 100%);
+}
+
+p.sources a {
+    color: #fff;
+}
+
+p.sources a:hover {
+    font-style: italic;
 }
 
 /**
