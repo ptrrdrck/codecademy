@@ -139,7 +139,7 @@ h1 {
     animation: click 0.18s ease-in-out;
 }
 
-#index {
+.index {
     text-decoration: none;
 }
 
@@ -232,7 +232,7 @@ footer img:hover {
     animation: out 0.5s;
 }
 
-footer a {
+.footer-link {
     text-decoration: none;
     color: #000;
     font-size: 1rem;
@@ -242,11 +242,11 @@ footer a {
     padding-bottom: 2px;
 }
 
-footer a:hover {
+.footer-link:hover {
     font-style: italic;
 }
 
-footer a:hover::after {
+.footer-link:hover::after {
     content: "";
     position: absolute;
     bottom: 2px;
