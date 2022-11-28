@@ -34,10 +34,10 @@ guessButton.addEventListener('click', () => {
 
   // Display the winner
   if (humanIsWinner) {
-    guessButton.innerText = 'You Win!!!';
+    guessButton.innerText = 'You Win';
     guessButton.classList.toggle('winning-text')
   } else {
-    computerWinsDisplay.innerText = 'Computer Wins!!!';
+    computerWinsDisplay.innerText = 'Computer Wins';
   }
 
   // winnerDisplay.innerText = humanIsWinner ? 'You win!' : 'Computer wins!';
@@ -63,7 +63,7 @@ nextRoundButton.addEventListener('click', () => {
 
   // Reset the guess input box and the target number display:
   targetNumberDisplay.innerText = '?';
-  guessButton.innerText = 'Make a Guess';
+  guessButton.innerText = 'Vote "A"';
   humanGuessInput.value = '0';
   computerGuessDisplay.innerText = '?';
   computerWinsDisplay.innerText = '';

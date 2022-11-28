@@ -1,6 +1,11 @@
 * {
-  font-family: 'Roboto';
+  font-family: 'Fira Code', monospace;
+  font-size: 20px;
   box-sizing: border-box;
+}
+
+html {
+  margin: 0;
 }
 
 body {
@@ -11,8 +16,9 @@ body {
 }
 
 .game-container {
-  max-width: 640px;
+  /*max-width: 640px;*/
   margin: 0 auto;
+  min-height: 100vh;
   text-align: center;
 }
 
@@ -22,10 +28,12 @@ header {
 }
 
 h1 {
-  font-size: 60px;
-  background: -webkit-linear-gradient(#58a5ff, #a900f6);
+  font-family: Helvetica, sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  /*background: -webkit-linear-gradient(#58a5ff, #a900f6);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;*/
   margin-bottom: 0px;
 }
 
@@ -37,20 +45,10 @@ h1 {
 }
 
 .round-label {
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 400;
   margin-bottom: 10px;
   margin-top: 30px;
-}
-
-.guess {
-  min-width: 303px;
-  height: 328px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 19px;
-  border-radius: 25px;
 }
 
 .guessing-area {
@@ -59,6 +57,18 @@ h1 {
   align-items: flex-start;
   margin-bottom: 20px;
   margin-top: 20px;
+}
+
+.guess {
+  min-width: 200px;
+  max-width: 300px;
+  height: 328px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 19px;
+  border-radius: 25px;
 }
 
 .guess-title {
@@ -70,13 +80,16 @@ h1 {
 }
 
 .guess-label {
+  font-family: Helvetica, sans-serif;
   font-size: 24px;
   font-weight: 900;
+  letter-spacing: 1px;
   margin: 0;
   margin-bottom: 5px;
 }
 
 .score-label {
+  display: none;
   font-size: 16px;
   font-weight: 700;
   color: #a900f6;
@@ -97,22 +110,16 @@ h1 {
   background-color: #ececec;
 }
 
-#computer-guess {
-  font-size: 50px;
-  font-weight: 700;
-  color: #a5a5a5;
-}
-
 .human-guess {
-  border: 1px solid #a900f6;
+  border: 1px solid #006ff6;
   background-color: #ececec;
 }
 
 .guess input {
   height: 90px;
   width: 90px;
-  font-size: 30px;
-  border: 1px solid #a900f6;
+  font-size: 20px;
+  border: 1px solid #006ff6;
   border-radius: 10px;
   text-align: center;
   margin: 0 auto;
@@ -125,13 +132,13 @@ h1 {
 }
 
 .number-control {
-  border: solid 1px #a900f6;
+  border: 1px solid #006ff6;
   display: inline-block;
   width: 45px;
   height: 35px;
   font-size: 24px;
-  font-weight: 700;
-  color: #a900f6;
+  font-weight: 400;
+  color: #006ff6;
   cursor: pointer;
 }
 
@@ -157,19 +164,21 @@ h1 {
 }
 
 .button {
-  background: -webkit-linear-gradient(#58a5ff, #a900f6);
-  color: #fff;
   cursor: pointer;
   border-radius: 25px;
 }
 
+.button[disabled] {
+  background-color: #d2d2d2;
+  color: #a0a0a0;
+  cursor: default;
+}
+
 #guess {
-  padding: 20px;
-  width: 169px;
-  height: 59px;
+  padding: 10px 20px;
   border: none;
   font-weight: 400;
-  font-size: 17px;
+  border: 1px solid #006ff6;
 }
 
 input[type=number]::-webkit-inner-spin-button {
@@ -177,21 +186,11 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #next-round {
-  background: #000;
-  width: 179px;
-  height: 64px;
-  font-size: 19px;
+  padding: 10px 20px;
+  font-size: 20px;
   font-weight: 400;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  border: none;
-}
-
-.button[disabled] {
-  background-color: #d2d2d2;
-  color: #a0a0a0;
-  cursor: default;
+  margin: 20px auto;
+  border: 1px solid #006ff6;
 }
 
 .instructions {
@@ -210,7 +209,6 @@ input[type=number]::-webkit-inner-spin-button {
 .instructions h3 {
   font-size: 14px;
 }
-
 
 .winning-text, .winning-text[disabled] {
   color: #000;
