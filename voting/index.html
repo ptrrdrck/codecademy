@@ -2,70 +2,76 @@
 
 <html>
   <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Voting</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div class="game-container">
+    <div class="container">
       <header>
-        <h1>Voting</h1>
+        <h1>Time-Consistent Weighted Voting</h1>
       </header>
 
       <div class="rounds">
         <p class="round-label">Round <span id="round-number">1</span>...</p>
+        <p class="round-label">You can use up to <span class="outline" id="round-weight">10</span> votes this round.</p>
+      </div>
+
+      <div class="voting-area">
+        <div class="option-area">
+          <div class="value-options">
+            <div class="card option-card">
+              <div class="card-title">
+                <p class="card-label">Option A</p>
+              </div>
+              <input type="number" id="vote-value-a" value=0>
+              <div class="number-controls">
+                <button class="number-control left" id="subtract-a" disabled>-</button>
+                <button class="number-control right" id="add-a">+</button>
+              </div>
+              <button class="button" id="vote-button-a">Vote "A"</button>
+            </div>
+            <div class="card option-card">
+              <div class="card-title">
+                <p class="card-label">Option B</p>
+              </div>
+              <input type="number" id="vote-value-b" value=0>
+              <div class="number-controls">
+                <button class="number-control left" id="subtract-b" disabled>-</button>
+                <button class="number-control right" id="add-b">+</button>
+              </div>
+              <button class="button" id="vote-button-b">Vote "B"</button>
+            </div>
+          </div>  
+          <button class="button" id="abstain">Abstain</button>
+        </div>
         <div class="next-round-container">
-        <button class="button" id="next-round" disabled>Next Round</button>
+        <button class="button" id="next-round">Next Round</button>
+        </div> 
+        <div class="stats-area">
+          <div class="card stats-card">
+            <div class="card-title">
+              <p class="card-label">Stats</p>
+            </div>
+            <p class="stat">Votes accrued: <span id="votes-accrued">10</span></p>
+            <p class="stat">Votes used: <span id="votes-used">0</span></p>
+            <p class="stat">Votes available: <span id="votes-available">10</span></p>
+            <p class="stat">Rounds active: <span id="rounds-active">0</span></p>
+            <p class="stat">Active streak: <span id="">?</span></p>
+            <p class="stat">Rounds missed: <span id="rounds-missed">0</span></p>
+            <p class="stat">Voted for A: <span id="vote-tally-a">0</span>&nbsp;<span id="total-a-votes">(?)</span></p>
+            <p class="stat">Voted for B: <span id="vote-tally-b">0</span>&nbsp;<span id="total-b-votes">(?)</span></p>
+            <p class="stat">Abstained: <span id="abstain-tally">0</span></p>
+          </div>
+          <div class="card history-card">
+            <div class="card-title">
+              <p class="card-label">History</p>
+            </div>
+            <p class="history" id="history">?</p>
+          </div>
         </div>
       </div>
-
-      <div class="guessing-area">
-        <div class="guess human-guess">
-          <div class="guess-title">
-            <p class="guess-label">Option A</p>
-            <p class="score-label">Score: <span id="human-score">0</span></p>
-          </div>
-          <input type="number" id="human-guess" min=0 max=9 value=0>
-          <div class="number-controls">
-            <button class="number-control left" id="subtract" disabled>-</button>
-            <button class="number-control right" id="add">+</button>
-          </div>
-          <button class="button" id="guess">Vote "A"</button>
-        </div>
-        <div class="guess human-guess">
-          <div class="guess-title">
-            <p class="guess-label">Option B</p>
-            <p class="score-label">Score: <span id="human-score">0</span></p>
-          </div>
-          <input type="number" id="human-guess" min=0 max=9 value=0>
-          <div class="number-controls">
-            <button class="number-control left" id="subtract" disabled>-</button>
-            <button class="number-control right" id="add">+</button>
-          </div>
-          <button class="button" id="guess">Vote "B"</button>
-        </div>
-        <div class="guess computer-guess">
-          <div class="guess-title">
-            <p class="guess-label">Stats</p>
-            <p class="score-label">Score: <span id="computer-score">0</span></p>
-          </div>
-          <p class="">Max voting power (active streak): <span id="target-number">?</span></p>
-          <p class="">Rounds voted: <span id="target-number">?</span></p>
-          <p class="">Rounds missed: <span id="target-number">?</span></p>
-          <!--<p id="computer-guess">?</p>
-          <p class="winning-text" id="computer-wins"></p>-->
-        </div>
-        <div class="guess computer-guess">
-          <div class="guess-title">
-            <p class="guess-label">History</p>
-            <p class="score-label">Score: <span id="computer-score">0</span></p>
-          </div>
-          <p id="computer-guess">?</p>
-          <p class="winning-text" id="computer-wins"></p>
-        </div>
-      </div>
-
     </div>
     <!--
     <div class="instructions">
@@ -82,7 +88,7 @@
         <p>Click "Next Round" to play again.</p>
       </div>
     </div>
-  -->
+    -->
     <script src="./script.js"></script>
     <script src="./game.js"></script>
   </body>

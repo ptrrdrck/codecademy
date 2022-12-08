@@ -1,7 +1,38 @@
-let humanScore = 0;
-let computerScore = 0;
 let currentRoundNumber = 1;
+let votesAccrued = 10;
+let votesUsed = 0;
+let votesAvailable = votesAccrued - votesUsed;
+let roundsActive = 0;
+let roundsMissed = 0;
+let currentRoundWeight = votesAvailable;
 
+const advanceRound = () => {
+  if (currentVoteValueA > 0) {
+    votesAvailable = votesAvailable - currentVoteValueA + 10;
+  } else if (currentVoteValueB > 0) {
+    votesAvailable = votesAvailable - currentVoteValueB + 10;
+  } else {
+    votesAvailable;
+  }
+  if (voteButtonA.hasAttribute('disabled') || voteButtonB.hasAttribute('disabled') || abstainButton.hasAttribute('disabled')) {
+    votesAccrued = votesAccrued + 10;
+    votesUsed = votesAccrued - votesAvailable;
+    roundsActive++;
+  } else {
+    roundsActive;
+  }
+  if (!voteButtonA.hasAttribute('disabled') && !voteButtonB.hasAttribute('disabled') && !abstainButton.hasAttribute('disabled')) {
+    roundsMissed++;
+    //votesAvailable >= 11 ? votesAvailable-- : votesAvailable;
+    votesUsed = votesAccrued - votesAvailable;
+  } else {
+    roundsMissed;
+  }
+  currentRoundNumber++;
+  currentRoundWeight = votesAvailable;
+}
+
+/*
 const generateTarget = () => {
   return Math.floor(Math.random() * 10);
 }
@@ -20,5 +51,4 @@ const compareGuesses = (humanGuess, computerGuess, target) => {
 
 const updateScore = winner =>
   winner === 'human' ? humanScore++ : computerScore++;
-
-const advanceRound = () => currentRoundNumber++;
+*/
