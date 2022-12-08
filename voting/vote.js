@@ -71,8 +71,8 @@ nextRoundButton.addEventListener('click', () => {
   bTallyDisplay.innerText = bTally;
   abstainTallyDisplay.innerText = abstainTally;
   // Set the correct disabled state for the buttons
-  voteButtonA.removeAttribute('disabled');
-  voteButtonB.removeAttribute('disabled');
+  voteButtonA.setAttribute('disabled', true);
+  voteButtonB.setAttribute('disabled', true);
   abstainButton.removeAttribute('disabled');
   // Reset the vote input boxes
   voteButtonA.innerText = 'Vote "A"';
@@ -114,10 +114,12 @@ const handleValueChangeA = value => {
   if (value >= 1 && value <= 8) {
     subtractButtonA.removeAttribute('disabled');
     addButtonA.removeAttribute('disabled');
+    voteButtonA.removeAttribute('disabled');
   } else if (value > 8) {
     addButtonA.setAttribute('disabled', true);
   } else if (value < 1) {
     subtractButtonA.setAttribute('disabled', true);
+    voteButtonA.setAttribute('disabled', true);
   } else {
     subtractButtonA.setAttribute('disabled', true);
   }
@@ -127,10 +129,12 @@ const handleValueChangeB = value => {
   if (value >= 1 && value < votesAvailable) {
     subtractButtonB.removeAttribute('disabled');
     addButtonB.removeAttribute('disabled');
+    voteButtonB.removeAttribute('disabled');
   } else if (value = votesAvailable) {
     addButtonB.setAttribute('disabled', true);
   } else if (value < 1) {
     subtractButtonB.setAttribute('disabled', true);
+    voteButtonB.setAttribute('disabled', true);
   } else {
     subtractButtonB.setAttribute('disabled', true);
   }
