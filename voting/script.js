@@ -1,7 +1,8 @@
 let currentRoundNumber = 1;
 let votesAccrued = 10;
 let votesUsed = 0;
-let votesAvailable = votesAccrued - votesUsed;
+let totalVotesUsed = 0;
+let votesAvailable = votesAccrued - totalVotesUsed;
 let roundsActive = 0;
 let activeStreak = 0;
 let roundsMissed = 0;
@@ -11,24 +12,27 @@ const advanceRound = () => {
   if (votedA == true) {
     roundsActive++;
     activeStreak++;
+    votesUsed = currentVoteValueA;
     votesAvailable = votesAvailable - currentVoteValueA;
-    votesUsed = votesAccrued - votesAvailable;
-    votesAccrued = votesAccrued + 10;
-    votesAvailable = votesAccrued - votesUsed;
+    totalVotesUsed = votesAccrued - votesAvailable;
+    (activeStreak >= 10) ? votesAccrued = votesAccrued + 20 : votesAccrued = votesAccrued + 10;
+    votesAvailable = votesAccrued - totalVotesUsed;
   } else if (votedB == true) {
     roundsActive++;
     activeStreak++;
+    votesUsed = currentVoteValueB;
     votesAvailable = votesAvailable - currentVoteValueB;
-    votesUsed = votesAccrued - votesAvailable;
-    votesAccrued = votesAccrued + 10;
-    votesAvailable = votesAccrued - votesUsed;
+    totalVotesUsed = votesAccrued - votesAvailable;
+    (activeStreak >= 10) ? votesAccrued = votesAccrued + 20 : votesAccrued = votesAccrued + 10;
+    votesAvailable = votesAccrued - totalVotesUsed;
   } else if (abstained == true) {
     roundsActive++;
     activeStreak++;
     votesAvailable;
-    votesUsed;
-    votesAccrued = votesAccrued + 10;
-    votesAvailable = votesAccrued - votesUsed;
+    votesUsed = 0;
+    totalVotesUsed;
+    (activeStreak >= 10) ? votesAccrued = votesAccrued + 20 : votesAccrued = votesAccrued + 10;
+    votesAvailable = votesAccrued - totalVotesUsed;
   } else {
     roundsMissed++;
     activeStreak = 0;
@@ -36,6 +40,14 @@ const advanceRound = () => {
   }
   currentRoundNumber++;
   currentRoundWeight = votesAvailable;
+  let history = document.querySelector('#history');
+  let stats = [`Round ${currentRoundNumber - 1}`,`${votesUsed} votes were used.`];
+  let nodes = stats.map(stat => {
+    let p = document.createElement('p');
+    p.textContent = stat;
+    return p;
+  });
+  history.prepend(...nodes);
 }
 
 /*
