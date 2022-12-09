@@ -76,7 +76,7 @@ h1 {
   border-radius: 25px;
 }
 
-.stats-area {
+.results-area {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -130,6 +130,22 @@ h1 {
   width: 320px;
   height: 360px;
   align-content: left;
+  justify-content: flex-start;
+}
+
+#stats-area {
+  background-color: rgb(234, 234, 234);
+  border-radius: 25px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+}
+
+.stat {
+  padding: 4px 10px;
+  margin: 0;
+  width: 100%;
+  text-align: left;
 }
 
 .history-card {
@@ -137,6 +153,24 @@ h1 {
   width: 320px;
   height: 360px;
   justify-content: flex-start;
+}
+
+#history-area {
+  background-color: rgb(234, 234, 234);
+  border-radius: 25px;
+  padding: 4px 20px 10px;
+  overflow: scroll;
+  width: 100%;
+  height: 100%;
+}
+
+#history-area p {
+  margin: 10px 0 0;
+  text-align: left;
+}
+
+#history-area p:nth-child(even) {
+  margin: 0 0 20px;
 }
 
 .card input {
@@ -233,13 +267,6 @@ h1 {
 
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
-}
-
-.stat {
-  padding: 5px;
-  margin: 0;
-  width: 100%;
-  text-align: left;
 }
 
 .instructions {
