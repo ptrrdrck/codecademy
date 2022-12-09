@@ -1,4 +1,5 @@
 let currentRoundNumber = 1;
+let roundStatus = '';
 let votesAccrued = 10;
 let votesUsed = 0;
 let totalVotesUsed = 0;
@@ -12,6 +13,7 @@ const advanceRound = () => {
   if (votedA == true) {
     roundsActive++;
     activeStreak++;
+    roundStatus = '(Voted)';
     votesUsed = currentVoteValueA;
     votesAvailable = votesAvailable - currentVoteValueA;
     totalVotesUsed = votesAccrued - votesAvailable;
@@ -20,6 +22,7 @@ const advanceRound = () => {
   } else if (votedB == true) {
     roundsActive++;
     activeStreak++;
+    roundStatus = '(Voted)';
     votesUsed = currentVoteValueB;
     votesAvailable = votesAvailable - currentVoteValueB;
     totalVotesUsed = votesAccrued - votesAvailable;
@@ -28,6 +31,7 @@ const advanceRound = () => {
   } else if (abstained == true) {
     roundsActive++;
     activeStreak++;
+    roundStatus = '(Abstained)';
     votesAvailable;
     votesUsed = 0;
     totalVotesUsed;
@@ -35,13 +39,14 @@ const advanceRound = () => {
     votesAvailable = votesAccrued - totalVotesUsed;
   } else {
     roundsMissed++;
+    roundStatus = '(Missed)';
     activeStreak = 0;
     roundsActive;
   }
   currentRoundNumber++;
   currentRoundWeight = votesAvailable;
   let history = document.querySelector('#history');
-  let stats = [`Round ${currentRoundNumber - 1}`,`${votesUsed} votes were used.`];
+  let stats = [`Round ${currentRoundNumber - 1} ${roundStatus}`,`${votesUsed} votes were used.`];
   let nodes = stats.map(stat => {
     let p = document.createElement('p');
     p.textContent = stat;

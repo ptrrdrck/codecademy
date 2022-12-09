@@ -108,8 +108,9 @@ nextRoundButton.addEventListener('click', () => {
   votedA = false;
   votedB = false;
   abstained = false;
-  //Reset the round vote count
+  //Reset the round-specific variables
   votesUsed = 0;
+  roundStatus = '';
 });
 
 const addButtonA = document.getElementById('add-a');
