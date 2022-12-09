@@ -49,26 +49,30 @@
         <div class="next-round-container">
         <button class="button" id="next-round">Next Round</button>
         </div> 
-        <div class="stats-area">
+        <div class="results-area">
           <div class="card stats-card">
             <div class="card-title">
               <p class="card-label">Stats</p>
             </div>
-            <p class="stat">Votes accrued: <span id="votes-accrued">10</span></p>
-            <p class="stat">Votes used: <span id="votes-used">0</span></p>
-            <p class="stat">Votes available: <span id="votes-available">10</span></p>
-            <p class="stat">Rounds active: <span id="rounds-active">0</span></p>
-            <p class="stat">Active streak: <span id="active-streak">0</span></p>
-            <p class="stat">Rounds missed: <span id="rounds-missed">0</span></p>
-            <p class="stat">Voted for A: <span id="vote-tally-a">0</span>&nbsp;(<span id="total-a-votes">0</span>)</p>
-            <p class="stat">Voted for B: <span id="vote-tally-b">0</span>&nbsp;(<span id="total-b-votes">0</span>)</p>
-            <p class="stat">Abstained: <span id="abstain-tally">0</span></p>
+            <div id="stats-area">
+              <p class="stat">Votes accrued: <span id="votes-accrued">10</span></p>
+              <p class="stat">Votes used: <span id="total-votes-used">0</span></p>
+              <p class="stat">Votes available: <span id="votes-available">10</span></p>
+              <p class="stat">Rounds active: <span id="rounds-active">0</span></p>
+              <p class="stat">Active streak: <span id="active-streak">0</span></p>
+              <p class="stat">Rounds missed: <span id="rounds-missed">0</span></p>
+              <p class="stat">Voted for A: <span id="vote-tally-a">0</span>&nbsp;(<span id="total-a-votes">0</span>)</p>
+              <p class="stat">Voted for B: <span id="vote-tally-b">0</span>&nbsp;(<span id="total-b-votes">0</span>)</p>
+              <p class="stat">Abstained: <span id="abstain-tally">0</span></p>
+            </div>
           </div>
           <div class="card history-card">
             <div class="card-title">
               <p class="card-label">History</p>
             </div>
-            <p class="history" id="history">?</p>
+            <div id="history-area">
+              <p class="history" id="history"></p>
+            </div>
           </div>
         </div>
       </div>
