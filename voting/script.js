@@ -3,30 +3,36 @@ let votesAccrued = 10;
 let votesUsed = 0;
 let votesAvailable = votesAccrued - votesUsed;
 let roundsActive = 0;
+let activeStreak = 0;
 let roundsMissed = 0;
 let currentRoundWeight = votesAvailable;
 
 const advanceRound = () => {
-  if (currentVoteValueA > 0) {
-    votesAvailable = votesAvailable - currentVoteValueA + 10;
-  } else if (currentVoteValueB > 0) {
-    votesAvailable = votesAvailable - currentVoteValueB + 10;
-  } else {
-    votesAvailable;
-  }
-  if (voteButtonA.hasAttribute('disabled') || voteButtonB.hasAttribute('disabled') || abstainButton.hasAttribute('disabled')) {
-    votesAccrued = votesAccrued + 10;
-    votesUsed = votesAccrued - votesAvailable;
+  if (votedA == true) {
     roundsActive++;
-  } else {
-    roundsActive;
-  }
-  if (!voteButtonA.hasAttribute('disabled') && !voteButtonB.hasAttribute('disabled') && !abstainButton.hasAttribute('disabled')) {
-    roundsMissed++;
-    //votesAvailable >= 11 ? votesAvailable-- : votesAvailable;
+    activeStreak++;
+    votesAvailable = votesAvailable - currentVoteValueA;
     votesUsed = votesAccrued - votesAvailable;
+    votesAccrued = votesAccrued + 10;
+    votesAvailable = votesAccrued - votesUsed;
+  } else if (votedB == true) {
+    roundsActive++;
+    activeStreak++;
+    votesAvailable = votesAvailable - currentVoteValueB;
+    votesUsed = votesAccrued - votesAvailable;
+    votesAccrued = votesAccrued + 10;
+    votesAvailable = votesAccrued - votesUsed;
+  } else if (abstained == true) {
+    roundsActive++;
+    activeStreak++;
+    votesAvailable;
+    votesUsed;
+    votesAccrued = votesAccrued + 10;
+    votesAvailable = votesAccrued - votesUsed;
   } else {
-    roundsMissed;
+    roundsMissed++;
+    activeStreak = 0;
+    roundsActive;
   }
   currentRoundNumber++;
   currentRoundWeight = votesAvailable;
