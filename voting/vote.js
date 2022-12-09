@@ -19,7 +19,7 @@ const bTallyWeightDisplay = document.getElementById('total-b-votes');
 const abstainTallyDisplay = document.getElementById('abstain-tally');
 
 const roundNumberDisplay = document.getElementById('round-number');
-const votesAccruedDisplay = document.getElementById('votes-accrued');
+const totalVotesAccruedDisplay = document.getElementById('votes-accrued');
 const totalVotesUsedDisplay = document.getElementById('total-votes-used');
 const votesAvailableDisplay = document.getElementById('votes-available');
 const roundWeightDisplay = document.getElementById('round-weight');
@@ -80,7 +80,7 @@ nextRoundButton.addEventListener('click', () => {
   roundNumberDisplay.innerText = currentRoundNumber;
   roundWeightDisplay.innerText = currentRoundWeight;
   // Display the updated stats
-  votesAccruedDisplay.innerText = votesAccrued;
+  totalVotesAccruedDisplay.innerText = totalVotesAccrued;
   totalVotesUsedDisplay.innerText = totalVotesUsed;
   votesAvailableDisplay.innerText = votesAvailable;
   roundsActiveDisplay.innerText = roundsActive;
@@ -109,6 +109,7 @@ nextRoundButton.addEventListener('click', () => {
   votedB = false;
   abstained = false;
   //Reset the round-specific variables
+  votesAccrued = 0;
   votesUsed = 0;
   roundStatus = '';
 });
