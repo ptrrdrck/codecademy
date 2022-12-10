@@ -182,7 +182,7 @@ h1 {
 .card input {
   background: rgb(250, 250, 250);
   height: 60px;
-  width: 90px;
+  width: 92px;
   font-size: 20px;
   border: 1px solid #000000;
   border-radius: 10px;
@@ -199,7 +199,7 @@ h1 {
   border: 1px solid #000000;
   background: rgb(250, 250, 250);
   display: inline-block;
-  width: 45px;
+  width: 46px;
   height: 35px;
   font-size: 24px;
   font-weight: 400;
@@ -229,8 +229,9 @@ h1 {
 }
 
 .button {
+  width: 92px;
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 10px;
   background-color: rgb(250, 250, 250);
 }
 
@@ -245,6 +246,7 @@ h1 {
 }
 
 #next-round {
+  width: 150px;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 400;
@@ -253,6 +255,7 @@ h1 {
 }
 
 #abstain {
+  width: 118px;
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 400;
@@ -322,7 +325,8 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 #confirm-yes, #confirm-no {
-  border-radius: 25px;
+  padding: 4px;
+  border-radius: 10px;
   width: 70px;
   border: 1px solid #333;
 }

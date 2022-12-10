@@ -116,8 +116,8 @@ const goToNextRound = () => {
   voteButtonB.setAttribute('disabled', true);
   abstainButton.removeAttribute('disabled');
   // Reset the vote input boxes
-  voteButtonA.innerText = 'Vote "A"';
-  voteButtonB.innerText = 'Vote "B"';
+  voteButtonA.innerText = 'Vote A';
+  voteButtonB.innerText = 'Vote B';
   voteValueA.value = '0';
   voteValueB.value = '0';
   subtractButtonA.setAttribute('disabled', true);
