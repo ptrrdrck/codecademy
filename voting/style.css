@@ -1,6 +1,6 @@
 * {
-  font-family: 'Fira Code', monospace;
-  font-size: 18px;
+  font-family: 'Tabular', sans-serif;
+  font-size: 16px;
   box-sizing: border-box;
 }
 
@@ -30,9 +30,6 @@ h1 {
   font-family: Helvetica, sans-serif;
   font-size: 30px;
   letter-spacing: 1px;
-  /*background: -webkit-linear-gradient(#58a5ff, #a900f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;*/
   margin: 50px 0 20px;
 }
 
@@ -44,7 +41,6 @@ h1 {
 }
 
 .round-label {
-  font-size: 20px;
   font-weight: 400;
   margin: 0 auto 10px;
 }
@@ -71,9 +67,10 @@ h1 {
   align-items: center;
   width: auto;
   padding: 20px;
-  background: rgb(237,237,237);
+  background: linear-gradient(333deg, rgba(237,237,237,1) 51%, rgba(127,197,255,1) 100%);
   border: 1px solid rgb(127, 197, 255);
   border-radius: 25px;
+  position: relative;
 }
 
 .results-area {
@@ -85,7 +82,7 @@ h1 {
   padding: 20px;
   margin: 10px 0 0;
   gap: 20px;
-  background: rgb(237,237,237);
+  background: linear-gradient(333deg, rgba(237,237,237,1) 51%, rgb(148, 127, 255) 100%);
   border: 1px solid rgb(148, 127, 255);
   border-radius: 25px;
 }
@@ -175,7 +172,7 @@ h1 {
   text-align: left;
   /*padding-top: 5px;
   border-top: 1px solid rgb(148, 127, 255);*/
-  font-weight: 600;
+  font-weight: 500;
 }
 
 #history-area p:nth-child(4n) {
@@ -249,7 +246,7 @@ h1 {
 
 #next-round {
   padding: 10px 20px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   margin: 30px auto;
   border: 1px solid #000000;
@@ -257,7 +254,7 @@ h1 {
 
 #abstain {
   padding: 10px 20px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
   margin: 20px auto 0;
   border: 1px solid #000000;
@@ -270,6 +267,7 @@ h1 {
 #vote-button-a, #vote-button-b {
   padding: 10px 12px;
   border: none;
+  font-size: 18px;
   font-weight: 400;
   border: 1px solid #000000;
 }
