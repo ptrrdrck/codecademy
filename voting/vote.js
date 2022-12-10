@@ -190,9 +190,15 @@ const handleValueChangeB = value => {
 } 
 
 voteValueA.addEventListener('input', function(e) {
+  if (this.value > votesAvailable) {
+    this.value = votesAvailable;
+  }
   handleValueChangeA(e.target.value);
 });
 
 voteValueB.addEventListener('input', function(e) {
+  if (this.value > votesAvailable) {
+    this.value = votesAvailable;
+  }
   handleValueChangeB(e.target.value);
 });
