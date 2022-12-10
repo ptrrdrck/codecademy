@@ -33,6 +33,10 @@ const abstainButton = document.getElementById('abstain');
 const nextRoundButton = document.getElementById('next-round')
 
 voteButtonA.addEventListener('click', () => {
+  checkA();
+});
+
+const castVoteA = () => {
   // Store the number of votes used
   currentVoteValueA = voteValueA.value;
   // Set the flag
@@ -45,9 +49,13 @@ voteButtonA.addEventListener('click', () => {
   voteButtonA.setAttribute('disabled', true)
   voteButtonB.setAttribute('disabled', true)
   abstainButton.setAttribute('disabled', true)
-});
+};
 
 voteButtonB.addEventListener('click', () => {
+  checkB();
+});
+
+const castVoteB = () => {
   // Store the number of votes used
   currentVoteValueB = voteValueB.value;
   // Set the flag
@@ -60,9 +68,13 @@ voteButtonB.addEventListener('click', () => {
   voteButtonA.setAttribute('disabled', true)
   voteButtonB.setAttribute('disabled', true)
   abstainButton.setAttribute('disabled', true)
-});
+};
 
 abstainButton.addEventListener('click', () => {
+  checkAbstain();
+});
+
+const castVoteAbstain = () => {
   // Set the flag
   abstained = true;
   // Tally the vote
@@ -71,9 +83,17 @@ abstainButton.addEventListener('click', () => {
   voteButtonA.setAttribute('disabled', true)
   voteButtonB.setAttribute('disabled', true)
   abstainButton.setAttribute('disabled', true)
-});
+};
 
 nextRoundButton.addEventListener('click', () => {
+  if (votedA == true || votedB == true || abstained == true) {
+    goToNextRound();
+  } else {
+    checkNextRound();
+  }
+});
+
+const goToNextRound = () => {
   // Increase the round number
   advanceRound();
   // Display the updated round number and round weight
@@ -112,7 +132,7 @@ nextRoundButton.addEventListener('click', () => {
   votesAccrued = 0;
   votesUsed = 0;
   roundStatus = '';
-});
+};
 
 const addButtonA = document.getElementById('add-a');
 const addButtonB = document.getElementById('add-b');

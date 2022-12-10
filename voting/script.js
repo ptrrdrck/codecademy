@@ -77,6 +77,62 @@ const advanceRound = () => {
   history.prepend(...nodes);
 }
 
+const ui = {
+  confirm: async (message) => createConfirm(message)
+};
+
+const createConfirm = (message) => {
+  return new Promise((complete, failed) => {
+    $("#confirm-message").text(message);
+
+    $("#confirm-yes").off("click");
+    $("#confirm-no").off("click");
+
+    $("#confirm-yes").on("click", () => {
+      $(".confirm").hide();
+      complete(true);
+    });
+    $("#confirm-no").on("click", () => {
+      $(".confirm").hide();
+      complete(false);
+    });
+
+    $(".confirm").show();
+  });
+};
+
+const checkA = async () => {
+  const confirm = await ui.confirm("Are you sure you want to vote for A?");
+  if (confirm) {
+    castVoteA();
+  } else { 
+  }
+};
+
+const checkB = async () => {
+  const confirm = await ui.confirm("Are you sure you want to vote for B?");
+  if (confirm) {
+    castVoteB();
+  } else {  
+  }
+};
+
+const checkAbstain = async () => {
+  const confirm = await ui.confirm("Are you sure you want to abstain?");
+  if (confirm) {
+    castVoteAbstain();
+  } else { 
+  }
+};
+
+const checkNextRound = async () => {
+  const confirm = await ui.confirm("Are you sure you want to miss this round?");
+  if (confirm) {
+    goToNextRound();
+  } else { 
+  }
+};
+
 /*
 const getAbsoluteDistance = (a, b) => {
   return Math.abs(a - b);

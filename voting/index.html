@@ -7,6 +7,7 @@
     <title>Voting</title>
     <link rel="stylesheet" href="./style.css">
     <link href="https://api.fontshare.com/v2/css?f[]=tabular@600,701,1,700,301,500,400,501,601,401,300&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -17,6 +18,17 @@
       <div class="rounds">
         <p class="round-label">Round <span id="round-number">1</span>...</p>
         <p class="round-label">You can use up to <span class="outline" id="round-weight">10</span> votes this round.</p>
+      </div>
+
+      <div class="confirm">
+        <div></div>
+        <div>
+          <div id="confirm-message">Confirm text</div>
+          <div class="confirm-choices">
+          <input id="confirm-yes" type="button" value="Yes" />
+          <input id="confirm-no" type="button" value="No" />
+          </div>
+        </div>
       </div>
 
       <div class="voting-area">
