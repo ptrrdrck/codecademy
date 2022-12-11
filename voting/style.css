@@ -99,7 +99,7 @@ h1 {
   justify-content:space-between;
   align-items: center;
   padding: 19px;
-  border-radius: 25px;
+  border-radius: 20px;
 }
 
 .card-title {
@@ -133,7 +133,7 @@ h1 {
 
 #stats-area {
   background-color: rgb(234, 234, 234);
-  border-radius: 25px;
+  border-radius: 20px;
   width: 100%;
   height: 100%;
   padding: 10px;
@@ -155,7 +155,7 @@ h1 {
 
 #history-area {
   background-color: rgb(234, 234, 234);
-  border-radius: 25px;
+  border-radius: 20px;
   padding: 4px 20px 10px;
   overflow: scroll;
   width: 100%;
@@ -187,7 +187,7 @@ h1 {
   border: 1px solid #000000;
   border-radius: 10px;
   text-align: center;
-  margin: 20px auto;
+  margin: 13px auto 10px;
 }
 
 .number-controls {
@@ -250,7 +250,7 @@ h1 {
   padding: 10px 20px;
   font-size: 18px;
   font-weight: 400;
-  margin: 30px auto;
+  margin: 10px auto 30px;
   border: 1px solid #000000;
 }
 
