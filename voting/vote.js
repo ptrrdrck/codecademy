@@ -30,25 +30,27 @@ const activeStreakDisplay = document.getElementById('active-streak');
 const voteButtonA = document.getElementById('vote-button-a');
 const voteButtonB = document.getElementById('vote-button-b');
 const abstainButton = document.getElementById('abstain');
-const nextRoundButton = document.getElementById('next-round')
+const nextRoundButton = document.getElementById('next-round');
+
+const addButtonA = document.getElementById('add-a');
+const addButtonB = document.getElementById('add-b');
+const subtractButtonA = document.getElementById('subtract-a');
+const subtractButtonB = document.getElementById('subtract-b');
+
+const scrollDiv = nextRoundButton.offsetTop;
+const historyArea = document.getElementById('history-area');
 
 voteButtonA.addEventListener('click', () => {
   checkA();
 });
 
 const castVoteA = () => {
-  // Store the number of votes used
-  currentVoteValueA = voteValueA.value;
-  // Set the flag
+  currentVoteValueA = voteValueA.value - 0;
   votedA = true;
-  // Tally the vote
-  aTally++;
-  // Calculate the new total votes used for A
-  aTallyWeight = parseFloat(aTallyWeight) + parseFloat(currentVoteValueA);
-  // Set the correct disabled state for the buttons
-  voteButtonA.setAttribute('disabled', true)
-  voteButtonB.setAttribute('disabled', true)
-  abstainButton.setAttribute('disabled', true)
+  disableVoteButtons();
+  window.scrollTo({top: scrollDiv-580, behavior: 'smooth'});
+  updateStats();
+  updateHistory();
 };
 
 voteButtonB.addEventListener('click', () => {
@@ -56,18 +58,12 @@ voteButtonB.addEventListener('click', () => {
 });
 
 const castVoteB = () => {
-  // Store the number of votes used
-  currentVoteValueB = voteValueB.value;
-  // Set the flag
+  currentVoteValueB = voteValueB.value - 0;
   votedB = true;
-  // Tally the vote
-  bTally++;
-  // Calculate the new total votes used for B
-  bTallyWeight = parseFloat(bTallyWeight) + parseFloat(currentVoteValueB);
-  // Set the correct disabled state for the buttons
-  voteButtonA.setAttribute('disabled', true)
-  voteButtonB.setAttribute('disabled', true)
-  abstainButton.setAttribute('disabled', true)
+  disableVoteButtons();
+  window.scrollTo({top: scrollDiv-580, behavior: 'smooth'});
+  updateStats();
+  updateHistory();
 };
 
 abstainButton.addEventListener('click', () => {
@@ -75,14 +71,11 @@ abstainButton.addEventListener('click', () => {
 });
 
 const castVoteAbstain = () => {
-  // Set the flag
   abstained = true;
-  // Tally the vote
-  abstainTally++;
-  // Set the correct disabled state for the buttons
-  voteButtonA.setAttribute('disabled', true)
-  voteButtonB.setAttribute('disabled', true)
-  abstainButton.setAttribute('disabled', true)
+  disableVoteButtons();
+  window.scrollTo({top: scrollDiv-580, behavior: 'smooth'});
+  updateStats();
+  updateHistory();
 };
 
 nextRoundButton.addEventListener('click', () => {
@@ -94,50 +87,43 @@ nextRoundButton.addEventListener('click', () => {
 });
 
 const goToNextRound = () => {
-  // Increase the round number
-  advanceRound();
+  // Handle missed round
+  if (votedA == false && votedB == false && abstained == false) {
+    updateMissedRound();
+    updateHistory();
+    advanceRound();
+  } else {
+    advanceRound();
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
   // Display the updated round number and round weight
   roundNumberDisplay.innerText = currentRoundNumber;
   roundWeightDisplay.innerText = currentRoundWeight;
-  // Display the updated stats
-  totalVotesAccruedDisplay.innerText = totalVotesAccrued;
-  totalVotesUsedDisplay.innerText = totalVotesUsed;
-  votesAvailableDisplay.innerText = votesAvailable;
-  roundsActiveDisplay.innerText = roundsActive;
-  activeStreakDisplay.innerText = activeStreak;
-  roundsMissedDisplay.innerText = roundsMissed;
-  aTallyDisplay.innerText = aTally;
-  aTallyWeightDisplay.innerText = aTallyWeight;
-  bTallyDisplay.innerText = bTally;
-  bTallyWeightDisplay.innerText = bTallyWeight;
-  abstainTallyDisplay.innerText = abstainTally;
-  // Set the correct disabled state for the buttons
+  // Set the correct button states
   voteButtonA.setAttribute('disabled', true);
   voteButtonB.setAttribute('disabled', true);
   abstainButton.removeAttribute('disabled');
+  nextRoundButton.classList.remove('button-glow');
   // Reset the vote input boxes
   voteButtonA.innerText = 'Vote A';
   voteButtonB.innerText = 'Vote B';
   voteValueA.value = '0';
   voteValueB.value = '0';
+  voteValueA.removeAttribute('disabled');
+  voteValueB.removeAttribute('disabled');
   subtractButtonA.setAttribute('disabled', true);
   subtractButtonB.setAttribute('disabled', true);
   addButtonA.removeAttribute('disabled');
   addButtonB.removeAttribute('disabled');
-  //Reset the flags
+  // Reset the flags
   votedA = false;
   votedB = false;
   abstained = false;
-  //Reset the round-specific variables
+  // Reset the round-specific variables
   votesAccrued = 0;
   votesUsed = 0;
   roundStatus = '';
 };
-
-const addButtonA = document.getElementById('add-a');
-const addButtonB = document.getElementById('add-b');
-const subtractButtonA = document.getElementById('subtract-a');
-const subtractButtonB = document.getElementById('subtract-b');
 
 addButtonA.addEventListener('click', () => {
   voteValueA.value = + voteValueA.value + 1;

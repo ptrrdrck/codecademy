@@ -1,80 +1,122 @@
 let currentRoundNumber = 1;
 let roundStatus = '';
+let voteAccrualRate = 10;
 let votesAccrued = 0;
-let totalVotesAccrued = 10;
+let totalVotesAccrued = voteAccrualRate;
 let votesUsed = 0;
 let totalVotesUsed = 0;
 let votesAvailable = totalVotesAccrued - totalVotesUsed;
 let roundsActive = 0;
 let activeStreak = 0;
+let activeStreakThreshold = 10;
+let activeStreakAccrualRate = 20;
 let roundsMissed = 0;
 let currentRoundWeight = votesAvailable;
 
-const advanceRound = () => {
+const disableVoteButtons = () => {
+  addButtonA.setAttribute('disabled', true);
+  addButtonB.setAttribute('disabled', true);
+  subtractButtonA.setAttribute('disabled', true);
+  subtractButtonB.setAttribute('disabled', true);
+  voteValueA.setAttribute('disabled', true);
+  voteValueB.setAttribute('disabled', true);
+  voteButtonA.setAttribute('disabled', true);
+  voteButtonB.setAttribute('disabled', true);
+  abstainButton.setAttribute('disabled', true);
+  nextRoundButton.classList.add('button-glow');
+}
+
+const updateStats = () => {
   if (votedA == true) {
     roundsActive++;
     activeStreak++;
     roundStatus = 'Voted A';
+    aTally++;
+    aTallyWeight = parseFloat(aTallyWeight) + parseFloat(currentVoteValueA);
     votesUsed = currentVoteValueA;
     votesAvailable = votesAvailable - currentVoteValueA;
     totalVotesUsed = totalVotesAccrued - votesAvailable;
-    if (activeStreak >= 10) {
-      totalVotesAccrued = totalVotesAccrued + 20;
-      votesAccrued = 20;
+    if (activeStreak >= activeStreakThreshold) {
+      totalVotesAccrued = parseFloat(totalVotesAccrued) + parseFloat(activeStreakAccrualRate);
+      votesAccrued = activeStreakAccrualRate;
     } 
     else {
-      totalVotesAccrued = totalVotesAccrued + 10;
-      votesAccrued = 10;
+      totalVotesAccrued = parseFloat(totalVotesAccrued) + parseFloat(voteAccrualRate);
+      votesAccrued = voteAccrualRate;
     }
     votesAvailable = totalVotesAccrued - totalVotesUsed;
   } else if (votedB == true) {
     roundsActive++;
     activeStreak++;
     roundStatus = 'Voted B';
+    bTally++;
+    bTallyWeight = parseFloat(bTallyWeight) + parseFloat(currentVoteValueB);
     votesUsed = currentVoteValueB;
     votesAvailable = votesAvailable - currentVoteValueB;
     totalVotesUsed = totalVotesAccrued - votesAvailable;
-    if (activeStreak >= 10) {
-      totalVotesAccrued = totalVotesAccrued + 20;
-      votesAccrued = 20;
+    if (activeStreak >= activeStreakThreshold) {
+      totalVotesAccrued = parseFloat(totalVotesAccrued) + parseFloat(activeStreakAccrualRate);
+      votesAccrued = activeStreakAccrualRate;
     } 
     else {
-      totalVotesAccrued = totalVotesAccrued + 10;
-      votesAccrued = 10;
+      totalVotesAccrued = parseFloat(totalVotesAccrued) + parseFloat(voteAccrualRate);
+      votesAccrued = voteAccrualRate;
     }
     votesAvailable = totalVotesAccrued - totalVotesUsed;
   } else if (abstained == true) {
     roundsActive++;
     activeStreak++;
     roundStatus = 'Abstained';
+    abstainTally++;
     votesUsed = 0;
     votesAvailable;
     totalVotesUsed;
-    if (activeStreak >= 10) {
-      totalVotesAccrued = totalVotesAccrued + 20;
-      votesAccrued = 20;
+    if (activeStreak >= activeStreakThreshold) {
+      totalVotesAccrued = parseFloat(totalVotesAccrued) + parseFloat(activeStreakAccrualRate);
+      votesAccrued = activeStreakAccrualRate;
     } 
     else {
-      totalVotesAccrued = totalVotesAccrued + 10;
-      votesAccrued = 10;
+      totalVotesAccrued = parseFloat(totalVotesAccrued) + parseFloat(voteAccrualRate);
+      votesAccrued = voteAccrualRate;
     }
     votesAvailable = totalVotesAccrued - totalVotesUsed;
   } else {
-    roundsMissed++;
-    roundStatus = 'Missed';
-    activeStreak = 0;
-    roundsActive;
   }
-  currentRoundNumber++;
-  currentRoundWeight = votesAvailable;
+  totalVotesAccruedDisplay.innerText = totalVotesAccrued;
+  totalVotesUsedDisplay.innerText = totalVotesUsed;
+  votesAvailableDisplay.innerText = votesAvailable;
+  roundsActiveDisplay.innerText = roundsActive;
+  activeStreakDisplay.innerText = activeStreak;
+  aTallyDisplay.innerText = aTally;
+  aTallyWeightDisplay.innerText = aTallyWeight;
+  bTallyDisplay.innerText = bTally;
+  bTallyWeightDisplay.innerText = bTallyWeight;
+  abstainTallyDisplay.innerText = abstainTally;
+}
+
+const updateMissedRound = () => {
+  roundsMissed++;
+  roundStatus = 'Missed';
+  activeStreak = 0;
+  roundsMissedDisplay.innerText = roundsMissed;
+  activeStreakDisplay.innerText = activeStreak;
+}
+
+const updateHistory = () => {
   let history = document.querySelector('#history-area');
-  let stats = [`Round ${currentRoundNumber - 1}`,`${roundStatus}`,`${votesAccrued} votes were accrued.`,`${votesUsed} votes were used.`];
+  let stats = [`Round ${currentRoundNumber}`,`${roundStatus}`,`${votesAccrued} votes were accrued.`,`${votesUsed} votes were used.`];
   let nodes = stats.map(stat => {
     let p = document.createElement('p');
     p.textContent = stat;
     return p;
   });
   history.prepend(...nodes);
+  historyArea.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+const advanceRound = () => {
+  currentRoundNumber++;
+  currentRoundWeight = votesAvailable;
 }
 
 const ui = {
