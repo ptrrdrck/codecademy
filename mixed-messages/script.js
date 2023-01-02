@@ -1,14 +1,16 @@
 /**
     Dao  Drip © Peter Rodrick 2021.
-    **/
-//Displays the same random chapter of the Daodejing
-//from three characteristically distinct translations.
+    Displays the same random chapter of the Daodejing
+    from three characteristically distinct translations.
+**/
+
+const displayArea = document.getElementById('display');
+const dripButton = document.getElementById('drip-button');
+const yinYang = document.getElementById('yin-yang');
 
 const randNumb = (num) => {
   return Math.floor(Math.random() * num);
 };
-
-let message = [];
 
 const dao = {
   readable: [
@@ -262,35 +264,50 @@ const dao = {
   ],
 };
 
-let rand = randNumb(dao["readable"].length);
+function newChapter () {
+  let message = [];
+  let rand = randNumb(dao["readable"].length);
 
-for (let translation in dao) {
-  switch (translation) {
-    case "readable":
-      message.push(
-        `Chapter ${rand + 1} by Stephen Mitchell: ${dao[translation][rand]}` +
-          `<br /><span id="seperator">&#9737;</span>`
-      );
-      break;
-    case "poetic":
-      message.push(
-        `Chapter ${rand + 1} by Gia-Fu Feng & Jane English: ${
-          dao[translation][rand]
-        }` + `<br /><span id="seperator">&#9737;</span>`
-      );
-      break;
-    case "scholarly":
-      message.push(
-        `Chapter ${rand + 1} by Stephen Addiss & Stanley Lombardo: ${
-          dao[translation][rand]
-        }`
-      );
-      break;
-    default:
-      message.push("Could not fetch the translations.");
-  }
-}
+  for (let translation in dao) {
+    switch (translation) {
+      case "readable":
+        message.push(
+          `Chapter ${rand + 1} by Stephen Mitchell: ${dao[translation][rand]}` +
+            `<br /><span id="seperator">&#9737;</span>`
+        );
+        break;
+      case "poetic":
+        message.push(
+          `Chapter ${rand + 1} by Gia-Fu Feng & Jane English: ${
+            dao[translation][rand]
+          }` + `<br /><span id="seperator">&#9737;</span>`
+        );
+        break;
+      case "scholarly":
+        message.push(
+          `Chapter ${rand + 1} by Stephen Addiss & Stanley Lombardo: ${
+            dao[translation][rand]
+          }`
+        );
+        break;
+      default:
+        message.push("Could not fetch the translations.");
+    }
+  };
+  let formatted = message.join("\n\n");
+  displayArea.innerHTML = formatted;
+};
 
+newChapter();
+
+dripButton.addEventListener('click', () => {
+  newChapter();
+});
+
+yinYang.addEventListener('click', () => {
+  newChapter();
+  window.scrollTo({top: 0, behavior: 'smooth'});
+});
 //Original working function that printed to console.
 /*
 const formattedMessage = () => {
@@ -300,24 +317,3 @@ const formattedMessage = () => {
 
 formattedMessage(message);
 */
-
-//Making 'formatted' message variable available outside of the original function.
-//Line-breaks "\n\n" NOT working.
-let formatted = message.join("\n\n");
-
-document.getElementById("display").innerHTML = formatted;
-
-/*
-//NOT working.
-var drip = document.getElementById('drip');
-
-//NOT working.
-drip.onclick = function() {
-    display.innerHTML = formatted;
-});
-*/
-
-//Temporary fix for 'drip' button display-new-random-message behavior.
-function refreshPage() {
-  window.location.reload();
-}
