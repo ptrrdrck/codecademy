@@ -12,6 +12,14 @@ const randNumb = (num) => {
   return Math.floor(Math.random() * num);
 };
 
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 const dao = {
   readable: [
     "The tao that can be told is not the eternal Tao, the name that can be named is not the eternal Name. The unnamable is the eternally real. Naming is the origin of all material things. Free from desire, you realize the mystery. Caught in desire, you see only the manifestations. Yet mystery and manifestations arise from the same source. This source is called darkness. Darkness within darkness. The gateway to all understanding.",
@@ -272,29 +280,27 @@ function newChapter () {
     switch (translation) {
       case "readable":
         message.push(
-          `Chapter ${rand + 1} by Stephen Mitchell: ${dao[translation][rand]}` +
-            `<br /><span id="seperator">&#9737;</span>`
+          `Chapter ${rand + 1} by Stephen Mitchell: ${dao[translation][rand]}`
         );
         break;
       case "poetic":
         message.push(
           `Chapter ${rand + 1} by Gia-Fu Feng & Jane English: ${
-            dao[translation][rand]
-          }` + `<br /><span id="seperator">&#9737;</span>`
+            dao[translation][rand]}`
         );
         break;
       case "scholarly":
         message.push(
           `Chapter ${rand + 1} by Stephen Addiss & Stanley Lombardo: ${
-            dao[translation][rand]
-          }`
+            dao[translation][rand]}`
         );
         break;
       default:
         message.push("Could not fetch the translations.");
     }
   };
-  let formatted = message.join("\n\n");
+  let shuffled = shuffle(message);
+  let formatted = shuffled.join('<br /><br />');
   displayArea.innerHTML = formatted;
 };
 
@@ -308,12 +314,3 @@ yinYang.addEventListener('click', () => {
   newChapter();
   window.scrollTo({top: 0, behavior: 'smooth'});
 });
-//Original working function that printed to console.
-/*
-const formattedMessage = () => {
-    let formatted = message.join('\n\n');
-    console.log(formatted);
-}
-
-formattedMessage(message);
-*/
