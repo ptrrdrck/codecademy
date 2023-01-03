@@ -17,6 +17,19 @@
       -->
       <p id="display" class="fade-in">Waiting...</p>
     </main>
+    <div class="chapter-selection">
+      <span class="select-text">Select a chapter: </span>
+      <div class="selection-area">
+        <div class="input-area">
+          <input id="chapter-select-input" type="number" value="1">
+          <div class="number-controls">
+            <button class="button plus" id="add-button">+</button>
+            <button class="button minus" id="subtract-button" disabled>-</button>
+          </div>
+        </div>
+        <button class="button" id="chapter-select-button" onclick="viewChapter()">View</button>
+      </div>
+    </div>
     <footer class="fade-in">
       <img id="yin-yang" src="./img/yin-yang-solid.svg" />
       <div id="links">
