@@ -1,99 +1,78 @@
 @charset "UTF-8";
-
-/**
-    Dao  Drip © Peter Rodrick 2021.
-    **/
-
-/**
-    Global styles.
-    **/
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
 html {
   min-height: 100%;
-  /*background: rgb(63, 201, 255);*/
-  background: linear-gradient(
-    239deg,
-    rgb(203, 252, 254) 0%,
-    rgb(244, 244, 244) 28%,
-    rgb(242, 242, 242) 40%,
-    rgb(240, 240, 240) 100%
-  );
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  background: linear-gradient(239deg,#cbfcfe 0,#f4f4f4 28%,#f2f2f2 40%,#f0f0f0 100%);
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 24px
 }
-.emphasis {
-  font-style: italic;
+.emphasis,
+.footer-link:hover,
+p.sources a:hover {
+  font-style: italic
 }
-
-/**
-    Animations & associated classes.
-    **/
 @keyframes fadeIn {
   from {
-    opacity: 0;
+    opacity: 0
   }
   to {
-    opacity: 1;
+    opacity: 1
   }
 }
 .fade-in {
-  animation: fadeIn 1s;
-  opacity: 1;
+  animation: 1s fadeIn;
+  opacity: 1
 }
 @keyframes in {
   0% {
-    -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(0)
   }
   100% {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg)
   }
 }
 @keyframes out {
   0% {
-    -webkit-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg)
   }
   100% {
-    -webkit-transform: rotate(0deg);
+    -webkit-transform: rotate(0)
   }
 }
 @keyframes click {
   0% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(1)
   }
   100% {
-    -webkit-transform: scale(0.964);
+    -webkit-transform: scale(.964)
   }
 }
 @keyframes hover {
   0% {
-    -webkit-transform: scale(1.03);
+    -webkit-transform: scale(1.03)
   }
   100% {
-    -webkit-transform: scale(1);
+    -webkit-transform: scale(1)
   }
 }
-
-/**
-    Header & Drip button.
-    **/
 header {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: calc(40px + 2vw);
-  margin-bottom: calc(15px + 2vw);
+  margin-bottom: calc(15px + 2vw)
 }
 h1 {
   font-weight: 400;
   font-size: calc(1.9rem + 1vw);
-  margin: 20px calc(10px + 2vw);
+  margin: 20px calc(10px + 2vw)
 }
 #drip-button {
-  background: rgb(184, 252, 74);
+  background: #b8fc4a;
   color: #000;
   border: none;
   border-radius: 50%;
@@ -107,30 +86,31 @@ h1 {
   padding: calc(70px + 1vw);
   letter-spacing: 1px;
   margin: 20px;
-  box-shadow: 0px 4px 15px rgba(67, 67, 67, 0.25);
+  box-shadow: 0 4px 15px rgba(67,67,67,.25)
 }
 #drip-button:hover {
   cursor: pointer;
-  -webkit-animation: hover 0.36s;
-  animation: hover 0.36s;
+  -webkit-animation: .36s hover;
+  animation: .36s hover
 }
 #drip-button:active {
-  -webkit-animation: click 0.18s ease-in-out;
-  animation: click 0.18s ease-in-out;
+  -webkit-animation: .18s ease-in-out click;
+  animation: .18s ease-in-out click
 }
 .index {
-  text-decoration: none;
+  text-decoration: none
 }
 .chapter-selection {
   display: flex;
   justify-content: center;
-  margin: 0;
-  padding-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  background: #e3e3e3;
   gap: 18px
 }
 .select-text {
   align-self: center;
-  letter-spacing: 0.32px;
+  letter-spacing: .32px
 }
 .input-area {
   display: flex;
@@ -139,7 +119,7 @@ h1 {
 .selection-area {
   display: flex;
   align-self: center;
-  gap: 20px;
+  gap: 20px
 }
 input {
   background: #fafafa;
@@ -147,7 +127,7 @@ input {
   width: 50px;
   font-size: 1rem;
   border: 1px solid #000;
-  border-radius: 4px;
+  border-radius: 10px;
   text-align: center;
   outline: 0
 }
@@ -162,9 +142,9 @@ input[disabled] {
   background-color: #eaeaea;
   border: 1px solid #a0a0a0
 }
-input[disabled]:hover,
-.number-control[disabled]:hover {
-  cursor: not-allowed;
+.number-control[disabled]:hover,
+input[disabled]:hover {
+  cursor: not-allowed
 }
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -174,41 +154,41 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   position: relative;
   height: 38px;
-  margin: 0 18px 0 0;
+  margin: 0 18px 0 0
 }
-.number-controls .plus,
-.number-controls .minus {
+.number-controls .minus,
+.number-controls .plus {
   position: absolute;
   left: 0;
-  width: 0; 
+  width: 0;
   height: 0;
   padding: 0;
   margin: 0;
-  background: none;
-  border-radius: 0;
+  background: 0 0;
+  border-radius: 0
 }
-.number-controls .plus:hover,
-.number-controls .minus:hover {
-  background-color: transparent;
+.number-controls .minus:hover,
+.number-controls .plus:hover {
+  background-color: transparent
 }
-.number-controls .plus { 
+.number-controls .plus {
   top: 0;
-  margin-top: -6px;
+  margin-top: -5px;
   border-top: 10px solid transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid black;
+  border-bottom: 10px solid #000
 }
 .number-controls .minus {
   bottom: 0;
-  margin-bottom: -6px;
+  margin-bottom: -5px;
   border-bottom: 10px solid transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #000;
+  border-top: 10px solid #000
 }
 .number-control[disabled] {
-  transition-duration: .3s;
+  transition-duration: .3s
 }
 .number-controls .plus[disabled] {
   border-top: 10px solid transparent;
@@ -216,7 +196,7 @@ input[type=number]::-webkit-inner-spin-button {
   border-right: 10px solid transparent;
   border-bottom: 10px solid #a0a0a0;
   cursor: not-allowed;
-  background-color: transparent;
+  background-color: transparent
 }
 .number-controls .minus[disabled] {
   border-bottom: 10px solid transparent;
@@ -224,20 +204,20 @@ input[type=number]::-webkit-inner-spin-button {
   border-right: 10px solid transparent;
   border-top: 10px solid #a0a0a0;
   cursor: not-allowed;
-  background-color: transparent;
+  background-color: transparent
 }
 .button {
   width: auto;
   height: 38px;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 10px;
   background-color: #fafafa;
   padding: 4px 10px;
   color: #000;
   font-size: 1rem;
-  letter-spacing: 0.32px;
+  letter-spacing: .32px;
   border: 1px solid #000;
-  align-self: center;
+  align-self: center
 }
 .button:hover {
   transition-duration: .3s;
@@ -247,98 +227,91 @@ input[type=number]::-webkit-inner-spin-button {
   transition-duration: .3s;
   background-color: #eaeaea;
   color: #a0a0a0;
-  border: 1px solid #a0a0a0;
+  border: 1px solid #a0a0a0
 }
-
-/**
-    Message container.
-    **/
-@media (min-width: 0px) {
+@media (min-width:0px) {
   #display,
   .sources {
     font-size: clamp(1rem, calc(1rem + 1vw), 1.5rem);
-    margin: 30px 10%;
+    margin: 30px 10% 60px
   }
   .chapter-selection {
-    flex-direction: column;
+    margin: 0 10% 30px;
+    flex-direction: column
   }
 }
-@media (min-width: 1150px) {
+@media (min-width:1150px) {
   #display,
   .sources {
     font-size: clamp(1.5rem, calc(1.5rem + 1vw), 1.8rem);
-    margin: 30px 14%;
+    margin: 30px 14% 60px
   }
   .chapter-selection {
-    flex-direction: row;
+    margin: 0 14% 30px;
+    flex-direction: row
   }
 }
 #display {
   line-height: 1.3;
-  letter-spacing: 0.22px;
+  letter-spacing: .22px;
   border: none;
   border-radius: 10px;
   padding: 5% 6%;
-  background: rgb(184, 252, 74);
+  background: #b8fc4a
 }
 #seperator {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 40px 0px;
+  margin: 40px 0
+}
+.emoji {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
 }
 .sources {
   line-height: 1.3;
-  letter-spacing: 0.22px;
+  letter-spacing: .22px;
   border: none;
   border-radius: 10px;
   padding: 5% 6%;
-  color: rgb(0, 0, 0);
-  background: rgb(255, 255, 255);
+  color: #000;
+  background: #e3e3e3
 }
 p.sources a {
-  color: rgb(0, 0, 0);
+  color: #000
 }
-p.sources a:hover {
-  font-style: italic;
-}
-
-/**
-    Footer.
-    **/
 footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center
 }
 #links {
   display: flex;
-  flex-direction: row;
+  flex-direction: row
 }
 footer img {
   margin: calc(40px + 2vw) auto;
   width: calc(80px + 1vw);
   height: calc(80px + 1vw);
-  -webkit-animation: in 0.5s;
-  animation: in 0.5s;
+  -webkit-animation: .5s in;
+  animation: .5s in
 }
 footer img:hover {
-  -webkit-animation: out 0.5s;
-  animation: out 0.5s;
-  cursor: pointer;
+  -webkit-animation: .5s out;
+  animation: .5s out;
+  cursor: pointer
 }
 .footer-link {
   text-decoration: none;
   color: #000;
   font-size: 1rem;
-  letter-spacing: 0.32px;
+  letter-spacing: .32px;
   margin: 0 12px calc(40px + 2vw);
   position: relative;
-  padding-bottom: 2px;
-}
-.footer-link:hover {
-  font-style: italic;
+  padding-bottom: 2px
 }
 .footer-link:hover::after {
   content: "";
@@ -347,6 +320,6 @@ footer img:hover {
   left: 0;
   height: 2px;
   width: 100%;
-  background: rgb(184, 252, 74);
-  z-index: -1;
+  background: #b8fc4a;
+  z-index: -1
 }

@@ -12,9 +12,6 @@
       <button id="drip-button" type="submit">drip</button>
     </header>
     <main>
-      <!--
-      <p id="counter" class="fade-in"></p>  
-      -->
       <p id="display" class="fade-in">Waiting...</p>
     </main>
     <div class="chapter-selection">
@@ -23,17 +20,20 @@
         <div class="input-area">
           <input id="chapter-select-input" type="number" value="1">
           <div class="number-controls">
-            <button class="button plus" id="add-button">+</button>
-            <button class="button minus" id="subtract-button" disabled>-</button>
+            <button class="button plus" id="add-button"></button>
+            <button class="button minus" id="subtract-button" disabled></button>
           </div>
         </div>
         <button class="button" id="chapter-select-button" onclick="viewChapter()">View</button>
       </div>
     </div>
+    <!--<div class="chapter-selection">
+      <span class="select-text">Percent read: </span><span class="select-text" id="percent-read">0%</span>
+    </div>-->
     <footer class="fade-in">
       <img id="yin-yang" src="./img/yin-yang-solid.svg" />
       <div id="links">
-        <a class="footer-link" href="./about.html">&rarr;about</a>
+        <a class="footer-link" href="./about.html">About</a>
       </div>
     </footer>
     <script src="./script.js" type="text/javascript"></script>
