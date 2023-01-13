@@ -6,7 +6,7 @@
 }
 html {
   min-height: 100%;
-  background: linear-gradient(239deg,#cbfcfe 0,#f4f4f4 28%,#f2f2f2 40%,#f0f0f0 100%);
+  background: linear-gradient(239deg,#cbfcfe 0,#F2DFCE 20%,#F2DFCE 40%,#F2DFCE 100%);
   font-family: Arial,Helvetica,sans-serif;
   font-size: 24px
 }
@@ -72,7 +72,7 @@ h1 {
   margin: 20px calc(10px + 2vw)
 }
 #drip-button {
-  background: #b8fc4a;
+  background: #FFF1E0;
   color: #000;
   border: none;
   border-radius: 50%;
@@ -105,12 +105,15 @@ h1 {
   justify-content: center;
   padding: 20px;
   border-radius: 10px;
-  background: #e3e3e3;
-  gap: 18px
+  background: #FFF1E0;
+  gap: 16px
 }
 .select-text {
   align-self: center;
   letter-spacing: .32px
+}
+#bullet {
+  padding: 0 24px;
 }
 .input-area {
   display: flex;
@@ -119,28 +122,17 @@ h1 {
 .selection-area {
   display: flex;
   align-self: center;
-  gap: 20px
+  gap: 19px
 }
 input {
-  background: #fafafa;
+  background: #fff6eb;
   height: 38px;
   width: 50px;
   font-size: 1rem;
-  border: 1px solid #000;
+  border: 1px solid #e0ccbc;
   border-radius: 10px;
   text-align: center;
   outline: 0
-}
-input::placeholder {
-  color: #000
-}
-input:focus::placeholder {
-  color: transparent
-}
-input[disabled] {
-  color: #a0a0a0;
-  background-color: #eaeaea;
-  border: 1px solid #a0a0a0
 }
 .number-control[disabled]:hover,
 input[disabled]:hover {
@@ -177,7 +169,7 @@ input[type=number]::-webkit-inner-spin-button {
   border-top: 10px solid transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #000
+  border-bottom: 10px solid #e0ccbc
 }
 .number-controls .minus {
   bottom: 0;
@@ -185,7 +177,7 @@ input[type=number]::-webkit-inner-spin-button {
   border-bottom: 10px solid transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #000
+  border-top: 10px solid #e0ccbc
 }
 .number-control[disabled] {
   transition-duration: .3s
@@ -194,7 +186,7 @@ input[type=number]::-webkit-inner-spin-button {
   border-top: 10px solid transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid #a0a0a0;
+  border-bottom: 10px solid #f5e2d4;
   cursor: not-allowed;
   background-color: transparent
 }
@@ -202,7 +194,7 @@ input[type=number]::-webkit-inner-spin-button {
   border-bottom: 10px solid transparent;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #a0a0a0;
+  border-top: 10px solid #f5e2d4;
   cursor: not-allowed;
   background-color: transparent
 }
@@ -211,17 +203,17 @@ input[type=number]::-webkit-inner-spin-button {
   height: 38px;
   cursor: pointer;
   border-radius: 10px;
-  background-color: #fafafa;
-  padding: 4px 10px;
+  background-color: #fff6eb;
+  padding: 4px 12px;
   color: #000;
   font-size: 1rem;
   letter-spacing: .32px;
-  border: 1px solid #000;
+  border: 1px solid #e0ccbc;
   align-self: center
 }
 .button:hover {
   transition-duration: .3s;
-  background-color: #ececec
+  background-color: #F2DFCE
 }
 .button[disabled] {
   transition-duration: .3s;
@@ -236,7 +228,10 @@ input[type=number]::-webkit-inner-spin-button {
     margin: 30px 10% 60px
   }
   .chapter-selection {
-    margin: 0 10% 30px;
+    margin: 0 10% 60px;
+    flex-direction: column
+  }
+  #links {
     flex-direction: column
   }
 }
@@ -247,7 +242,10 @@ input[type=number]::-webkit-inner-spin-button {
     margin: 30px 14% 60px
   }
   .chapter-selection {
-    margin: 0 14% 30px;
+    margin: 0 14% 60px;
+    flex-direction: row
+  }
+  #links {
     flex-direction: row
   }
 }
@@ -257,9 +255,13 @@ input[type=number]::-webkit-inner-spin-button {
   border: none;
   border-radius: 10px;
   padding: 5% 6%;
-  background: #b8fc4a
+  background: #FFF1E0
 }
-#seperator {
+.chapter-author {
+  text-decoration: underline;
+  margin: 0
+}
+.chapter-separator {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -277,7 +279,7 @@ input[type=number]::-webkit-inner-spin-button {
   border-radius: 10px;
   padding: 5% 6%;
   color: #000;
-  background: #e3e3e3
+  background: #FFF1E0
 }
 p.sources a {
   color: #000
@@ -290,10 +292,10 @@ footer {
 }
 #links {
   display: flex;
-  flex-direction: row
+  gap: 20px
 }
 footer img {
-  margin: calc(40px + 2vw) auto;
+  margin: calc(60px + 2vw) auto;
   width: calc(80px + 1vw);
   height: calc(80px + 1vw);
   -webkit-animation: .5s in;
@@ -309,7 +311,7 @@ footer img:hover {
   color: #000;
   font-size: 1rem;
   letter-spacing: .32px;
-  margin: 0 12px calc(40px + 2vw);
+  margin: 0 12px;
   position: relative;
   padding-bottom: 2px
 }
@@ -320,6 +322,6 @@ footer img:hover {
   left: 0;
   height: 2px;
   width: 100%;
-  background: #b8fc4a;
+  background: #FFF1E0;
   z-index: -1
 }

@@ -6,8 +6,9 @@
 
 const displayArea = document.getElementById('display');
 const dripButton = document.getElementById('drip-button');
+const dripAgainButton = document.getElementById('drip-again-button');
 const yinYang = document.getElementById('yin-yang');
-const percentReadDisplay = document.getElementById('percent-read');
+/*const percentReadDisplay = document.getElementById('percent-read');*/
 
 const chapterSelectInput = document.getElementById('chapter-select-input');
 const chapterSelectButton = document.getElementById('chapter-select-button');
@@ -198,7 +199,7 @@ const dao = {
     'Truthful words are not beautiful. Beautiful words are not truthful. Good men do not argue. Those who argue are not good. Those who know are not learned. The learned do not know. The sage never tries to store things up. The more he does for others, the more he has. The more he gives to others, the greater his abundance. The Tao of heaven is pointed but does no harm. The Tao of the sage is work without effort.',
   ],
   addissLombardo: [
-    'Tao called Tao is not Tao. Names can name no lasting name. Nameless: the origin of heaven and earth. Naming: the mother of ten thousand things. Empty of desire, perceive mystery. Filled with desire, perceive manifestations. These have the same source, but different names. Call them both deep - Deep and again deep: the gateway to all mystery.',
+    'Tao called Tao is not Tao. Names can name no lasting name. Nameless: the origin of heaven and earth. Naming: the mother of ten thousand things. Empty of desire, perceive mystery. Filled with desire, perceive manifestations. These have the same source, but different names. Call them both deep - deep and again deep: the gateway to all mystery.',
     'Recognize beauty and ugliness is born. Recognize good and evil is born. Is and isn\'t produce each other. Hard depends on easy, long is tested by short, high is determined by low, sound is harmonized by voice, after is followed by before. Therefore the sage is devoted to non action, moves without teaching, creates ten thousand things without instruction, lives but does not own, acts but does not presume, accomplishes without taking credit. When no credit is taken, accomplishment endures.',
     'Don\'t glorify heroes and people will not contend. Don\'t treasure rare objects and no one will steal. Don\'t display what people desire and their hearts will not be disturbed. Therefore, the Sage rules by emptying hearts and filling bellies, by weakening ambitions and strengthening bones; leads people away from knowing and wanting; deters those who know too much from going too far: practices non-action and the natural order is not disrupted.',
     'Tao is empty - its use never exhausted. Bottomless - the origin of all things. It blunts sharp edges, unties knots, softens glare, becomes one with the dusty world. Deeply subsistent - I don\'t know whose child it is. It is older than the Ancestor.',
@@ -250,7 +251,7 @@ const dao = {
     'Emerge into life, enter death. Life is only the thirteen body parts. Death is only the thirteen body parts. Human life, moving towards death, is the same thirteen. Why is this? Because life gives life to substance. You have heard of people good at holding on to life. Walking overland they don\'t avoid rhinos and tigers. In battle they don\'t arm themselves. The rhino\'s horn finds nothing to gore, the tiger\'s claws find nothing to flay, weapons find nothing to pierce. Why is this? They have no mortal spot.',
     'Tao bears them, Te nurses them, events form them, energy completes them. Therefore the ten thousand beings honour Tao and respect Te. Tao is honoured Te is respected because they do not give orders but endure in their own nature. Therefore, Tao bears them and Te nurses them, rears them, raises them, shelters them, nurtures them, supports them, protects them. Bears them without owning them, helps them without coddling them, rears them without ruling them. This is called original Te.',
     'The world has a source: the world\'s mother. Once you have the mother, you know the children. Once you know the children, return to the mother. Your body dies. There is no danger. Block the passage, bolt the gate: No strain until your life ends. Open the passage, take charge of things: No relief until your life ends. Seeing the small is called brightness. Maintaining gentleness is called strength. Use this brightness to return to brightness. Don\'t cling to your body\'s woes. Then you can learn endurance.',
-    'Having some knowledge when walking on the great Tao only brings fear. The great Tao is very smooth, but people like rough trails. The government is divided, fields are overgrown, granaries are empty, but the nobles clothes are gorgeous, their belts show off swords, and they are glutted with food and drink. Personal wealth is excessive. This is called thieves\' endowment, But it is not Tao.',
+    'Having some knowledge when walking on the great Tao only brings fear. The great Tao is very smooth, but people like rough trails. The government is divided, fields are overgrown, granaries are empty, but the nobles clothes are gorgeous, their belts show off swords, and they are glutted with food and drink. Personal wealth is excessive. This is called thieves\' endowment, but it is not Tao.',
     'Well planted, not uprooted. Well embraced, never lost. Descendants will continue the ancestral rituals. Maintain oneself: Te becomes real. Maintain the family: Te becomes abundant. Maintain the community: Te becomes extensive. Maintain the country: Te becomes public. Maintain the world: Te becomes omnipresent. Therefore, through self contemplate self, through family contemplate family, through community contemplate community, through country contemplate country, through world contemplate world. How do I know the world? Like this!',
     'Be filled with Te, like a baby: Wasps, scorpions and vipers do not sting it. Fierce tigers do not stalk it. Birds of prey do not attack it. Bones weak, muscles soft, but its grasp is tight. It does not yet know union of male and female, but its sex is formed, its vital essence complete. It can scream all day and not get hoarse, its harmony is complete. Knowing harmony is called endurance. Knowing endurance is called illumination. Increasing life is called fortune. Mind controlling energy is called power. When beings prosper and grow old, call them not-Tao. Not-Tao soon ends.',
     'Those who know don\'t talk. Those who talk don\'t know. Block the passage, bolt the gate, blunt the sharp, untie the knot, blend with the light, become one with the dust - this is called original unity. It can\'t be embraced, it can\'t be escaped, it can\'t be helped, it can\'t be harmed, it can\'t be exalted, it can\'t be despised. Therefore it is revered under Heaven.',
@@ -376,22 +377,22 @@ function newRandomChapter () {
     switch (translation) {
       case 'mitchell':
         message.push(
-          `Chapter ${rand + 1} by Stephen Mitchell: ${dao[translation][rand]}`
+          `<span class="chapter-author">Chapter ${rand + 1} by Stephen Mitchell:</span> ${dao[translation][rand]}`
         );
         break;
       case 'fengEnglish':
         message.push(
-          `Chapter ${rand + 1} by Gia-Fu Feng & Jane English: ${dao[translation][rand]}`
+          `<span class="chapter-author">Chapter ${rand + 1} by Gia-Fu Feng & Jane English:</span> ${dao[translation][rand]}`
         );
         break;
       case 'addissLombardo':
         message.push(
-          `Chapter ${rand + 1} by Stephen Addiss & Stanley Lombardo: ${dao[translation][rand]}`
+          `<span class="chapter-author">Chapter ${rand + 1} by Stephen Addiss & Stanley Lombardo:</span> ${dao[translation][rand]}`
         );
         break;
       case 'lin':
         message.push(
-          `Chapter ${rand + 1} by Derek Lin: ${dao[translation][rand]}`
+          `<span class="chapter-author">Chapter ${rand + 1} by Derek Lin:</span> ${dao[translation][rand]}`
         );
         break;
       default:
@@ -399,7 +400,7 @@ function newRandomChapter () {
     }
   };
   let shuffled = shuffle(message);
-  let formatted = shuffled.join('<br /><br />');
+  let formatted = shuffled.join('<br /><span class="chapter-separator">&bull;</span>');
   displayArea.innerHTML = formatted;
   /*if (readChapters.indexOf(rand + 1) === -1) {
     readChapters.push(rand + 1);
@@ -412,6 +413,11 @@ newRandomChapter();
 
 dripButton.addEventListener('click', () => {
   newRandomChapter();
+});
+
+dripAgainButton.addEventListener('click', () => {
+  newRandomChapter();
+  window.scrollTo({top: 0, behavior: 'smooth'});
 });
 
 yinYang.addEventListener('click', () => {
@@ -474,22 +480,22 @@ function viewChapter(chapter) {
     switch (translation) {
       case 'mitchell':
         message.push(
-          `Chapter ${chapter + 1} by Stephen Mitchell: ${dao[translation][chapter]}`
+          `<span class="chapter-author">Chapter ${chapter + 1} by Stephen Mitchell:</span> ${dao[translation][chapter]}`
         );
         break;
       case 'fengEnglish':
         message.push(
-          `Chapter ${chapter + 1} by Gia-Fu Feng & Jane English: ${dao[translation][chapter]}`
+          `<span class="chapter-author">Chapter ${chapter + 1} by Gia-Fu Feng & Jane English:</span> ${dao[translation][chapter]}`
         );
         break;
       case 'addissLombardo':
         message.push(
-          `Chapter ${chapter + 1} by Stephen Addiss & Stanley Lombardo: ${dao[translation][chapter]}`
+          `<span class="chapter-author">Chapter ${chapter + 1} by Stephen Addiss & Stanley Lombardo:</span> ${dao[translation][chapter]}`
         );
         break;
       case 'lin':
         message.push(
-          `Chapter ${chapter + 1} by Derek Lin: ${dao[translation][chapter]}`
+          `<span class="chapter-author">Chapter ${chapter + 1} by Derek Lin:</span> ${dao[translation][chapter]}`
         );
         break;
       default:
@@ -497,7 +503,7 @@ function viewChapter(chapter) {
     }
   };
   let shuffled = shuffle(message);
-  let formatted = shuffled.join('<br /><br />');
+  let formatted = shuffled.join('<br /><span class="chapter-separator">&bull;</span>');
   displayArea.innerHTML = formatted;
   window.scrollTo({top: 0, behavior: 'smooth'});
   /*if (readChapters.indexOf(selectedChapter) === -1) {
@@ -506,3 +512,7 @@ function viewChapter(chapter) {
   percentRead = `${Math.floor((readChapters.length / 81) * 100)}%`;
   percentReadDisplay.innerHTML = percentRead;*/
 };
+
+chapterSelectButton.addEventListener('click', () => {
+  viewChapter();
+});
