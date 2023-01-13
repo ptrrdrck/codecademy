@@ -126,7 +126,7 @@ h1 {
 }
 input {
   background: #fff6eb;
-  height: 38px;
+  height: 40px;
   width: 50px;
   font-size: 1rem;
   border: 1px solid #e0ccbc;
@@ -145,7 +145,7 @@ input[type=number]::-webkit-inner-spin-button {
 .number-controls {
   display: flex;
   position: relative;
-  height: 38px;
+  height: 40px;
   margin: 0 18px 0 0
 }
 .number-controls .minus,
@@ -200,7 +200,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .button {
   width: auto;
-  height: 38px;
+  height: 40px;
   cursor: pointer;
   border-radius: 10px;
   background-color: #fff6eb;
