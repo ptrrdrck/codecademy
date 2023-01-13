@@ -5,10 +5,10 @@
 **/
 
 const displayArea = document.getElementById('display');
+const unreadChaptersDisplay = document.getElementById('unread-chapters');
 const dripButton = document.getElementById('drip-button');
 const dripAgainButton = document.getElementById('drip-again-button');
 const yinYang = document.getElementById('yin-yang');
-/*const percentReadDisplay = document.getElementById('percent-read');*/
 
 const chapterSelectInput = document.getElementById('chapter-select-input');
 const chapterSelectButton = document.getElementById('chapter-select-button');
@@ -28,12 +28,12 @@ function shuffle(array) {
 };
 
 let selectedChapter = 1;
-/*let readChapters = [];
-let percentRead;*/
+let readChapters = [];
+let unreadChapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81];
 
 /**
- * Random chapter selection
- */
+    Random chapter selection
+**/
 function newRandomChapter () {
   let message = [];
   let rand = randNumb(dao['mitchell'].length);
@@ -67,11 +67,13 @@ function newRandomChapter () {
   let shuffled = shuffle(message);
   let formatted = shuffled.join('<br /><span class="chapter-separator">&bull;</span>');
   displayArea.innerHTML = formatted;
-  /*if (readChapters.indexOf(rand + 1) === -1) {
+  if (readChapters.indexOf(rand + 1) === -1) {
     readChapters.push(rand + 1);
   }
-  percentRead = `${Math.floor((readChapters.length / 81) * 100)}%`;
-  percentReadDisplay.innerHTML = percentRead;*/
+  unreadChapters = unreadChapters.filter(function (item) {
+    return readChapters.indexOf(item) === -1;
+  });
+  unreadChaptersDisplay.innerHTML = `<span class="chapter-numbers">${unreadChapters.join(', ')}</span>`;
 };
 
 newRandomChapter();
@@ -91,8 +93,8 @@ yinYang.addEventListener('click', () => {
 });
 
 /**
- * Manual chapter selection
- */
+    Manual chapter selection
+**/
 const handleValueChange = value => {
   if (value <= 1) {
     subtractButton.setAttribute('disabled', true);
@@ -108,13 +110,13 @@ const handleValueChange = value => {
 
 addButton.addEventListener('click', () => {
   chapterSelectInput.value = + chapterSelectInput.value + 1;
-  selectedChapter = chapterSelectInput.value;
+  selectedChapter = chapterSelectInput.valueAsNumber;
   handleValueChange(chapterSelectInput.value);
 });
 
 subtractButton.addEventListener('click', () => {
   chapterSelectInput.value = + chapterSelectInput.value - 1;
-  selectedChapter = chapterSelectInput.value;
+  selectedChapter = chapterSelectInput.valueAsNumber;
   handleValueChange(chapterSelectInput.value);
 });
 
@@ -129,12 +131,12 @@ chapterSelectInput.addEventListener('input', function(e) {
   if (this.value < 1) {
     this.value = 1;
   }
-  selectedChapter = e.target.value;
+  selectedChapter = e.target.valueAsNumber;
   handleValueChange(e.target.value);
 });
 
 chapterSelectInput.addEventListener('change', function(e) {
-  selectedChapter = e.target.value;
+  selectedChapter = e.target.valueAsNumber;
 });
 
 function viewChapter(chapter) {
@@ -171,11 +173,13 @@ function viewChapter(chapter) {
   let formatted = shuffled.join('<br /><span class="chapter-separator">&bull;</span>');
   displayArea.innerHTML = formatted;
   window.scrollTo({top: 0, behavior: 'smooth'});
-  /*if (readChapters.indexOf(selectedChapter) === -1) {
+  if (readChapters.indexOf(selectedChapter) === -1) {
     readChapters.push(selectedChapter);
   }
-  percentRead = `${Math.floor((readChapters.length / 81) * 100)}%`;
-  percentReadDisplay.innerHTML = percentRead;*/
+  unreadChapters = unreadChapters.filter(function (item) {
+    return readChapters.indexOf(item) === -1;
+  });
+  unreadChaptersDisplay.innerHTML = `<span class="chapter-numbers">${unreadChapters.join(', ')}</span>`;
 };
 
 chapterSelectButton.addEventListener('click', () => {
