@@ -142,7 +142,7 @@ h1 {
 }
 input {
   background: #fff6eb;
-  height: 40px;
+  height: 42px;
   width: 50px;
   font-size: 1rem;
   border: 1px solid #e0ccbc;
@@ -161,7 +161,7 @@ input[type=number]::-webkit-inner-spin-button {
 .number-controls {
   display: flex;
   position: relative;
-  height: 40px;
+  height: 42px;
   margin: 0 18px 0 0
 }
 .number-controls .minus,
@@ -216,7 +216,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .button {
   width: auto;
-  height: 40px;
+  height: 42px;
   cursor: pointer;
   border-radius: 10px;
   background-color: #fff6eb;
@@ -256,10 +256,10 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5% 6%;
+  padding: 5%;
   border-radius: 10px;
   background: #FFF1E0;
-  gap: 40px
+  gap: 20px
 }
 .line-one,
 .line-two {
@@ -277,8 +277,8 @@ input[type=number]::-webkit-inner-spin-button {
   justify-content: center;
   border: 1px solid #e0ccbc;
   border-radius: 10px;
-  padding: 20px;
-  gap: 10px
+  padding: 20px 20px 4px;
+  gap: 20px
 }
 .select-text {
   align-self: center;
@@ -305,6 +305,14 @@ input[type=number]::-webkit-inner-spin-button {
   display: flex;
   align-self: center;
   flex-wrap: wrap;
+  justify-content: center;
+}
+#unread-chapters td {
+  border: none;
+  width: 43px;
+  height: 43px;
+  display: flex;
+  justify-content: center;
 }
 .chapter-numbers {
   justify-self:center;
