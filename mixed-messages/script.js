@@ -5,8 +5,8 @@
 **/
 
 let selectedChapter = 1;
-let readChapters = [];
-let unreadChapters = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81];
+let readChapters = JSON.parse(localStorage.getItem('readChapters')) || [];
+let unreadChapters = JSON.parse(localStorage.getItem('unreadChapters')) || [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81];
 
 const displayArea = document.getElementById('display');
 const tablePlaceholder = document.getElementById('table-placeholder');
@@ -67,12 +67,17 @@ function newRandomChapter () {
   let shuffled = shuffle(message);
   let formatted = shuffled.join('<br /><span class="chapter-separator">&bull;</span>');
   displayArea.innerHTML = formatted;
+  
   if (readChapters.indexOf(rand + 1) === -1) {
     readChapters.push(rand + 1);
-  }
+  };
+  localStorage.setItem('readChapters', JSON.stringify(readChapters));
+
   unreadChapters = unreadChapters.filter(function (item) {
     return readChapters.indexOf(item) === -1;
   });
+  localStorage.setItem('unreadChapters', JSON.stringify(unreadChapters));
+
   document.getElementById('unread-chapters').remove();
   let x = document.createElement('TABLE');
   x.setAttribute('id', 'unread-chapters');
@@ -81,7 +86,7 @@ function newRandomChapter () {
     let y = document.createElement('TD');
     y.appendChild(document.createTextNode(unreadChapter));
     document.getElementById('unread-chapters').appendChild(y);    
-  }   
+  };
 };
 
 newRandomChapter();
@@ -181,12 +186,17 @@ function viewChapter(chapter) {
   let formatted = shuffled.join('<br /><span class="chapter-separator">&bull;</span>');
   displayArea.innerHTML = formatted;
   window.scrollTo({top: 0, behavior: 'smooth'});
+
   if (readChapters.indexOf(selectedChapter) === -1) {
     readChapters.push(selectedChapter);
-  }
+  };
+  localStorage.setItem('readChapters', JSON.stringify(readChapters));
+
   unreadChapters = unreadChapters.filter(function (item) {
     return readChapters.indexOf(item) === -1;
   });
+  localStorage.setItem('unreadChapters', JSON.stringify(unreadChapters));
+
   document.getElementById('unread-chapters').remove();
   let x = document.createElement('TABLE');
   x.setAttribute('id', 'unread-chapters');
@@ -195,7 +205,7 @@ function viewChapter(chapter) {
     let y = document.createElement('TD');
     y.appendChild(document.createTextNode(unreadChapter));
     document.getElementById('unread-chapters').appendChild(y);    
-  }
+  };
 };
 
 chapterSelectButton.addEventListener('click', () => {
